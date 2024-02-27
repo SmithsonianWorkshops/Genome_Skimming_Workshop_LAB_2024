@@ -21,7 +21,7 @@ echo + NSLOTS = $NSLOTS
 
 #
 fastqc \
--o /scratch/genomics/data/raw/
+-o /scratch/genomics/data/raw/ \
 /scratch/genomics/macdonaldk/data/raw/xxxxx_R1_xxxxx.fastq.gz
 #
 echo = `date` job $JOB_NAME done
