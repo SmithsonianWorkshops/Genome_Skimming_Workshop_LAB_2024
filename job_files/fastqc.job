@@ -27,3 +27,5 @@ echo = `date` job $JOB_NAME done
 
 # This job file loads the conda module, activates the fastqc
 # environment, and runs fastqc on the named read files
+
+# -o is the path to the output directory
