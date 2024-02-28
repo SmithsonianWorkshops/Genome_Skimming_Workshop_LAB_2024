@@ -1,0 +1,23 @@
+#!/bin/sh
+# ----------------Parameters---------------------- #
+#$ -S /bin/sh
+#$ -pe mthread 8
+#$ -q sThC.q
+#$ -l mres=8G
+#$ -cwd
+#$ -j y
+#$ -N fasterq_trim
+#$ -o logs/fasterq_trim.log
+#
+# ----------------Modules------------------------- #
+module load bioinformatics/sratoolkit
+# ----------------Your Commands------------------- #
+#
+echo + `date` job $JOB_NAME started in $QUEUE with jobID=$JOB_ID on $HOSTNAME
+echo + NSLOTS = $NSLOTS
+#
+#
+
+fasterq-dump /scratch/genomics/USER/PROJECT/data/sra/SRRxxxxxxx \
+--outdir ${data}scratch/genomics/USER/PROJECT/data/raw/ \
+--threads $NSLOTS --verbose
