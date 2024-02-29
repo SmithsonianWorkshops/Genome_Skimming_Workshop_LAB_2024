@@ -20,4 +20,8 @@ echo + NSLOTS = $NSLOTS
 
 fasterq-dump /scratch/genomics/USER/PROJECT/data/sra/SRRxxxxxxx \
 --outdir ${data}scratch/genomics/USER/PROJECT/data/raw/ \
---threads $NSLOTS --verbose
+--threads $NSLOTS
+
+# --outdir is the target directory for your converted read files. --threads is
+# number of threads fasterq-dump will use. $NSLOTS tells the program to use the
+# number of threads assigned in the Parameters section
