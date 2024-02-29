@@ -159,15 +159,15 @@ To setup FileZilla to connect to Hydra, enter these settings in the top bar:
 
 Then press the `Quickconnect` button.
 
-<img src="images/filezilla-login.png" alt="FileZilla settings for Hydra" width=500px>
+<img src="../images/filezilla-login.png" alt="FileZilla settings for Hydra" width=500px>
 
 On your first login, you'll be prompted about an "Unknown host key." Check "Always trust this host, add this key to the cache" and click "OK"
 
-<img src="images/filezilla-confirm.png" alt="FileZilla- confirm initial connection" width=400px>
+<img src="../images/filezilla-confirm.png" alt="FileZilla- confirm initial connection" width=400px>
 
 The FileZilla user interface is setup that the local system (your workstation) is listed on the left and the remote system (Hydra) is listed on the right. You navigate to the local directory on the left side and the remote on the right and then transfer files by double-clicking or dragging.
 
-<img src="images/filezilla-ui.png" alt="FileZilla- user interface for file transfers overview" width=400px>
+<img src="../images/filezilla-ui.png" alt="FileZilla- user interface for file transfers overview" width=400px>
 
 Use this method to transfer `Exon_50per_taxa.phylip.txt` to your /scratch/genomics/{user}/hydra_workshop directory
 
