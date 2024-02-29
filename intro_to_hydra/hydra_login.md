@@ -23,11 +23,11 @@ The [telework.si.edu](https://telework.si.edu) system allows any user with a Smi
 
 After logging in, expand the "IT Tools" section and choose "Hydra".
 
-<img src="images/telework-hydra-icon.png" width=300px alt="Hydra icon on telework site">
+<img src="../images/telework-hydra-icon.png" width=300px alt="Hydra icon on telework site">
 
 Click on one of the "SSH terminal" links to start the web terminal connection to one of the login nodes.
 
-<img src="images/web-terminal.png" width=500px alt="web based terminal options for hydra">
+<img src="../images/web-terminal.png" width=500px alt="web based terminal options for hydra">
 
 At the `login:` prompt, enter your Hydra username and at the `password:` prompt, enter your Hydra password.
 
@@ -50,7 +50,7 @@ In the command prompt window start the hydra connection with: `ssh {user}@hydra-
 
 If you are on a Mac, open the Terminal program which can be found in the Utilities folder inside the Applications folder (or type "terminal" in the popup Spotlight search).
 
-<img src="images/terminal.png" width=100px alt="Mac terminal.app icon">
+<img src="../images/terminal.png" width=100px alt="Mac terminal.app icon">
 
 Login with your Hydra username and password:
 
@@ -71,10 +71,10 @@ There are two pages in the Self Help system. The initial one is to change your p
 
 To create a new password choose "Request an email with a password reset link"
 
-<img src="images/reset-link.png" alt="Password reset link" width=350px>
+<img src="../images/reset-link.png" alt="Password reset link" width=350px>
 
 Enter your Hydra **user name** (not email) in the "Login" box and then press Send
 
-<img src="images/reset-user-name.png" alt="Password reset link" width=200px>
+<img src="../images/reset-user-name.png" alt="Password reset link" width=200px>
 
 A reset link will be emailed to your institutional email account.
