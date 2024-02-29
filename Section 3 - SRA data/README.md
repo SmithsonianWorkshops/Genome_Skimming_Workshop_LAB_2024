@@ -38,7 +38,7 @@ So, lets do that
 vdb-config --interactive
 ```
 
-<img src="https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/blob/main/images/vdb-config.png" alt="vdb-config" width=100px>
+<img src="https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/blob/main/images/vdb-config.png" alt="vdb-config" width=400px>
 
 
 Try downloading your SRA files again
