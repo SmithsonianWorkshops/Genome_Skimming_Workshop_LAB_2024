@@ -52,7 +52,7 @@ Prefetch downloads files in SRA format (ending in .sra). These need to be conver
 
 Fasterq-dump converts SRA data to fastq data, which can often be very large. Typically, we would subsequently compress fastq files to fastq.gz files, using gzip, as such:
 ```
-gzip path_to_fastq_file/SAMPLE.fastq
+gzip path_to_fastq_file/SAMPLE.fastq path_to_fastq_gz_file/SAMPLE.fastq.gz
 ``````
 However, this can take a long time, up to an hour for some of the files here. Luckily, we do not need fastq.gz read files, our programs can analyze fastq data.
 
