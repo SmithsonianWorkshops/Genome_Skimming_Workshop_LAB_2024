@@ -124,6 +124,66 @@ $ echo $PATH
 
 We're going to create an [IQ-TREE](http://www.iqtree.org/) (a phylogenetics application) job file to submit to be run on one of the compute nodes.
 
+We'll be running IQ-TREE on this [sequence alignment](https://doi.org/10.17632/ty5h3y9rwx.1) from [Wood et al.’s 2018 spider UCE paper](https://doi.org/10.1016/j.ympev.2018.06.038) generated at NMNH.
+
+For transferring files TO Hydra from a *website*, the best way to do this is to download directly to Hydra using `wget`.
+
+```bash
+wget https://prod-dcd-datasets-cache-zipfiles.s3.eu-west-1.amazonaws.com/ty5h3y9rwx-1.zip
+unzip ty5h3y9rwx-1.zip
+```
+
+```bash
+```
+
+
+### Creation of job submission file
+
+Now that the input file is in place, we'll need to generate a job submission file.
+
+We will be using the Hydra QSub Generation Utility to create this file.
+
+There is a link to this page on the page that lists Hydra's web-based tools.
+
+* Telework: open the Hydra option in "IT Tools" on the Telework site
+* On-site/VPN: go to <https://galaxy.si.edu/>
+
+* *CPU time*: short
+* *Memory*: 4 GB
+* *Type of PE*: multi-thread
+* *Number of CPUs*: 4
+* *Select the job's shell*: sh
+* *Select which modules to add*: bioinformatics/iqtree
+* *Job specific commands*:
+
+```bash
+iqtree2 -s Exon_50per_taxa.phylip.txt \
+       -nt $NSLOTS \
+       -pre exon_50per_taxa
+```
+
+* *Job Name*: iqtree
+* *Log File Name*: iqtree.log
+* *Err File Name*: [blank]
+* *Change to CWD*: Y
+* *Join output & error files*: Y
+* *Send email notifications*: Y
+* *Email*: [your email]
+
+This will generate the contents of your "job file" at the bottom. Click on the "Check if OK" button for any errors and then "Save it" to save to your computer.
+
+By default, the QSub Generator site will export this job file with a filename of "qsub.job", but it can be easy to lose track of several different versions of the same name ("Did I set up that analysis in qsub.job(54) or qsub.job(27)?"). Let's use the same job name from our job script, and rename the file to "iqtree.job".
+
+Now we need to transfer this job file to on Hydra using FileZilla or [globus.org](https://app.globus.org/).
+
+The file should go in to your `/scratch/genomics/{user}/hydra_workshop/` directory.
+
+Confirm the file looks ok by using `cat`
+
+```bash
+cat iqtree.job
+```
+
 ### Transferring files
 
 Critical to using Hydra is being able to transfer files to and from the system. You'll typically need to transfer to Hydra your input files and then copy back output for backing up and reporting.
@@ -185,52 +245,7 @@ Confirm the file has transferred by using the `less` command
 less Exon_50per_taxa.phylip.txt
 ```
 
-### Creation of job submission file
 
-Now that the input file is in place, we'll need to generate a job submission file.
-
-We will be using the Hydra QSub Generation Utility to create this file.
-
-There is a link to this page on the page that lists Hydra's web-based tools.
-
-* Telework: open the Hydra option in "IT Tools" on the Telework site
-* On-site/VPN: go to <https://galaxy.si.edu/>
-
-* *CPU time*: short
-* *Memory*: 4 GB
-* *Type of PE*: multi-thread
-* *Number of CPUs*: 4
-* *Select the job's shell*: sh
-* *Select which modules to add*: bioinformatics/iqtree
-* *Job specific commands*:
-
-```bash
-iqtree2 -s Exon_50per_taxa.phylip.txt \
-       -nt $NSLOTS \
-       -pre exon_50per_taxa
-```
-
-* *Job Name*: iqtree
-* *Log File Name*: iqtree.log
-* *Err File Name*: [blank]
-* *Change to CWD*: Y
-* *Join output & error files*: Y
-* *Send email notifications*: Y
-* *Email*: [your email]
-
-This will generate the contents of your "job file" at the bottom. Click on the "Check if OK" button for any errors and then "Save it" to save to your computer.
-
-By default, the QSub Generator site will export this job file with a filename of "qsub.job", but it can be easy to lose track of several different versions of the same name ("Did I set up that analysis in qsub.job(54) or qsub.job(27)?"). Let's use the same job name from our job script, and rename the file to "iqtree.job".
-
-Now we need to transfer this job file to on Hydra using FileZilla or [globus.org](https://app.globus.org/).
-
-The file should go in to your `/scratch/genomics/{user}/hydra_workshop/` directory.
-
-Confirm the file looks ok by using `cat`
-
-```bash
-cat iqtree.job
-```
 
 #### Editing text files on Hydra
 
