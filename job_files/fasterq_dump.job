@@ -6,8 +6,8 @@
 #$ -l mres=8G
 #$ -cwd
 #$ -j y
-#$ -N fasterq_trim
-#$ -o logs/fasterq_trim.log
+#$ -N SAMPLE_fasterq
+#$ -o logs/SAMPLE/fasterq.log
 #
 # ----------------Modules------------------------- #
 module load bioinformatics/sratoolkit
