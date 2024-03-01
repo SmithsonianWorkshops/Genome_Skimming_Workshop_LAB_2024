@@ -12,20 +12,12 @@ You will also see a prompt that looks something like this:
 
 Your `/home` directory has a relatively small size limit, so you don't store data here. There are several disks to run analyses from, we'll be using `/scratch`.
 
-There are subdirectories for different groups. Biologists use `/share/genomics`, NASM use `/share/nasm`, SAO use `/share/sao`
+There are subdirectories for different groups. Biologists use `/share/genomics`
 
 See <https://confluence.si.edu/display/HPC/Disk+Space+and+Disk+Usage> for more information about the storage configuration.
 
 ```bash
 cd /scratch/genomics/{user}
-```
-
-```bash
-cd /scratch/nasm/{user}
-```
-
-```bash
-cd /scratch/sao/{user}
 ```
 
 | Let us know if you get an error and we'll help you find or create your `/scratch` directory |
@@ -71,10 +63,13 @@ You can list all versions of a module with this (Note: tab-completion works for 
 module avail bio/iqtree
 ```
 
-You can see module-specific help for any module with the `module help` command. These are written as part of the Hydra installation process, and should not be mistaken for the official documentation for the software.
+| Multiple versions? One version is marked as the default if you don't specify a version.|
+| --- |
+
+You can see module-specific help for any module with the `module help` command. These are written as part of the Hydra installation process, and should not be mistaken for the official documentation for the software. For a few programs we also have additional information on the Hydra wiki. Those are [listed here](https://confluence.si.edu/display/HPC/Genomics+Software).
 
 ```bash
-$ module help bio/iqtree
+$ module help bio/iqtree/2.1.3
 
 -------------------------------------------------------------------
 Module Specific Help for /share/apps/modulefiles/bioinformatics/iqtree/2.1.3:
@@ -98,7 +93,9 @@ http://www.cibiv.at/software/iqtree/
 Ok, now let's actually load IQ-TREE.
 
 ```bash
-module load bio/iqtree
+$ module load bio/iqtree/2.1.3
+Loading bio/iqtree/2.1.3
+  Loading requirement: gcc/7.3.0
 ```
 
 You should get a notification that the module was loaded along with another required module, but nothing else has changed.
@@ -113,6 +110,13 @@ Olga Chernomor, Heiko Schmidt, Dominik Schrempf, Michael Woodhams.
 ...
 ```
 
+If you're familiar with Unix, what has happened is that the `$PATH` variable has been updated to include the directory where we have iqtree installed.
+
+```bash
+$ echo $PATH
+/share/apps/tools/gcc/7.3.0/bin:/share/apps/bioinformatics/iqtree/2.1.3/iqtree-2.1.3-Linux/bin...
+```
+
 |*In this exercise we loaded a module on the login node, but to run an analysis, we need to submit a job to the cluster*|
 |---|
 
@@ -124,11 +128,11 @@ We're going to create an [IQ-TREE](http://www.iqtree.org/) (a phylogenetics appl
 
 Critical to using Hydra is being able to transfer files to and from the system. You'll typically need to transfer to Hydra your input files and then copy back output for backing up and reporting.
 
+
+
 In this workshop we'll be running IQ-TREE on this [sequence alignment](https://doi.org/10.17632/ty5h3y9rwx.1) from [Wood et al.’s 2018 spider UCE paper](https://doi.org/10.1016/j.ympev.2018.06.038) generated at NMNH.
 
-Go to the [sequence alignment](https://doi.org/10.17632/ty5h3y9rwx.1) page and download "Exon_50per_taxa.phylip.txt" to your workstation.
-
-You can also download this file directly to Hydra using the command line program `wget`. This saves a step in transfering the file two time.
+For transferring files TO Hydra from a website, the best way to do this is to download directly to Hydra. We can use the URL for the data file and the command line program `wget` to get the file.
 
 ```bash
 wget https://prod-dcd-datasets-cache-zipfiles.s3.eu-west-1.amazonaws.com/ty5h3y9rwx-1.zip
@@ -152,7 +156,7 @@ Hint: you can run the program even if you don't have admin rights to the compute
 
 To setup FileZilla to connect to Hydra, enter these settings in the top bar:
 
-* Host: hydra-login02
+* Host: hydra-login01
 * Username: Your Hydra username
 * Password: Your Hydra pasword
 * Port: `22` (this defines the type of transfer protocol being used, scp/sftp in this case)
