@@ -21,8 +21,8 @@ echo + NSLOTS = $NSLOTS
 runmitos.py -i ${mitofinder_final_results}/${sample} \
 -c GENETIC_CODE \
 -o /scratch/nmnh_lab/macdonaldk/PROJECT/data/results/mitogenome/SAMPLE_mitos \
--r /scratch/nmnh_lab/macdonaldk/ref/refseq89m \
--R /scratch/nmnh_lab/macdonaldk/ref/refseq89m \
+-r /scratch/nmnh_lab/genome_skimming/ref/refseq89m \
+-R /scratch/nmnh_lab/genome_skimming/ref/refseq89m \
 --debug
 #
 echo = `date` job $JOB_NAME done
