@@ -1,17 +1,18 @@
 ## Read Assembly
-### SPAdes 
-We are going to run SPAdes on all our trimmed paired and unpaired reads. SPAdes error-corrects all reads, then performs a de-novo assembly using both pair-end and single-end reads and outputs a set of contigs. 
+There are multiple programs available for assembling your reads into longer continuous sequences. Some commonly used ones are [SPAdes](https://github.com/ablab/spades), [MitoFinder](https://github.com/RemiAllio/MitoFinder), [GetOrganelle](https://github.com/RemiAllio/MitoFinder), and [MitoZ](https://github.com/linzhi2013/MitoZ). We are going to focue on two programs today: SPAdes and GetOrganelle.
 
-### Run SPAdes 
-Create and submit a SPAdes job for each of your trimmed fastq or fastq.gz read files.
+### SPAdes 
+We are going to run SPAdes on all our trimmed paired and unpaired reads. 
+
+Create and submit a SPAdes job for each set of trimmed fastq or fastq.gz read files.
 A generic SPAdes job can be found here: [SPAdes.job](https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/blob/main/job_files/spades.job). 
 
-The SPAdes results for each paired set of reads will be saved in a sample-specific directory: `/data/results/spades/SAMPLE`. The contig file that will be used in the next annotation step is names with a generic contig.fasta
+We need a SPAdes results folder for SPAdes: `data/results/spades/`. The SPAdes results for each paired set of reads (each hydra job) will be saved in a sample-specific directory within this directory. You need to make The contig file that will be used in the next annotation step is named with a generic contig.fasta. I often change the name of the contig file to include the sample name (e.g. `cp contig.fasta > SRRxxxx.contig.fasta`).
 
-Run the SPAdes shell script, including the path to the directory containing your trimmed read files. For most, it should be something like: `/scratch/genomics/<USERNAME>/<PROJECT>/data/trimmed_sequences`. 
-```
-sh spades.sh <path_to_trimmed_sequences>
-```
+### GetOrganelle
+We are also going to run GetOrganelle on all our trimmed paired and unpaired reads.
 
-Your results should be in `/scratch/genomics/<USERNAME>/<PROJECT>/data/results/spades`. The results for each sample will be in a separate folder, named with the sample name. 
+Create and submit a GetOrganelle job for each set of trimmed fastq or fastq.gz read files.
+A generic GetOrganelle job can be found here: [GetOrganelle.job](https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/blob/main/job_files/getorganelle.job).
 
+We need a results folder for GetOrganelle: `data/results/getorganelle/`. The GetOrganelle results for each paired set of reads (each hydra job) will be saved in a sample-specific directory. The contig file(s) that will be used in the next annotation step are named similar to either SRRxxxx_animal_mt.Kxxx.complete.graph1.x.path_sequence.fasta if GetOrgenelle found a complete mitogenome, or SRRxxxx_animal_mt.Kxxx.scaffolds.graph1.x.path_sequence.fasta if it found contigs that could not be circularized. 
