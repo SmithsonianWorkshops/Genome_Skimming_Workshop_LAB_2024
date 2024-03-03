@@ -6,8 +6,8 @@
 #$ -l mres=16G,h_data=4G,h_vmem=4G
 #$ -cwd
 #$ -j y
-#$ -N SAMPLE
-#$ -o logs/SAMPLE_mitofinder.log
+#$ -N SRRxxxx_mitofinder
+#$ -o logs/SRRxxxx_mitofinder.log
 #
 # ----------------Modules------------------------- #
 module load bioinformatics/mitofinder
@@ -21,7 +21,7 @@ mitofinder \
 -j SAMPLE_mitofinder \
 -o 2 \
 -r /scratch/nmnh_lab/genome_skimming/ref/MITOREFERENCE \
--a /path_to_fasta_file/SAMPLE.fasta \
+-a /path_to_fasta_file/SRRxxxx.fasta \
 --new-genes -p $NSLOTS -m 16
 
 #
