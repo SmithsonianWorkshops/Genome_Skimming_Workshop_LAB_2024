@@ -6,8 +6,8 @@
 #$ -l mres=8G,h_data=2G,h_vmem=2G
 #$ -cwd
 #$ -j y
-#$ -N SAMPLE_trim
-#$ -o logs/SAMPLE_trim.log
+#$ -N SRRxxxx_trim
+#$ -o logs/SRRxxxx_trim.log
 #
 # ----------------Modules------------------------- #
 module load tools/conda
@@ -21,19 +21,18 @@ echo + NSLOTS = $NSLOTS
 
 #
 fastp \
--i /scratch/genomics/USER/PROJECT/data/raw/xxxxx_R1_xxxxx.fastq.gz \
--I /scratch/genomics/USER/PROJECT/data/raw/xxxxx_R1_xxxxx.fastq.gz \
--o /scratch/genomics/USER/PROJECT/data/trimmed_sequences/xxxx_R1_PE_trimmed.fastq.gz \
--O /scratch/genomics/USER/PROJECT/trimmed_sequences/xxxx_R2_PE_trimmed.fastq.gz \
---unpaired1 /scratch/genomics/USER/PROJECT/trimmed_sequences/xxxx_R0_SE_trimmed.fastq.gz \
---unpaired2 /scratch/genomics/USER/PROJECT/trimmed_sequences/xxxx_R0_SE_trimmed.fastq.gz \
--h logs/xxxx_fastp.html \
--j logs/xxxx_fastp.json \
+-i /scratch/genomics/USER/PROJECT/data/raw/SRRxxxx_1.fastq \
+-I /scratch/genomics/USER/PROJECT/data/raw/SRRxxxx_2.fastq \
+-o /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R1_PE_trimmed.fastq.gz \
+-O /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R2_PE_trimmed.fastq.gz \
+--unpaired1 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R0_SE_trimmed.fastq.gz \
+--unpaired2 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R0_SE_trimmed.fastq.gz \
+-h logs/SRRxxxx_fastp.html \
 -l 30 -f 3 -F 3 -t 2 -T 2 \
 --cut_tail --cut_tail_window_size 5 --cut_tail_mean_quality 15 \
 --trim_poly_g \
---adapter_fasta /scratch/genomics/macdonaldk/primers/itru_adapters.fa \
---threads $NSLOTS
+--adapter_fasta /scratch/scratch/nmnh_lab/genome_skimming/primers/itru_adapters.fa \
+--thread $NSLOTS
 #
 echo = `date` job $JOB_NAME done
 
