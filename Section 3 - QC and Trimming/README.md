@@ -21,6 +21,7 @@ Trimmed reads will be saved in `/data/trimmed_sequences`, so create this directo
 Create and submit a fastp job for each of your fastq or fastq.gz read files.
 A generic fastqc job can be found here: [fastp.job](https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/blob/main/job_files/fastp.job). 
 
+**Don't forget that you will need to create `data/trimmed_sequences` first.**
 
 ## FASTQC TRIMMED READS 
 We next run fastQC on all our trimmed reads to check our trimming parameters. We will run the same job file we ran the first time, just using different target files.
