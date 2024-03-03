@@ -20,12 +20,10 @@ conda activate /scratch/nmnh_lab/envs/genome_skimming/spades_ksm
 echo + `date` job $JOB_NAME started in $QUEUE with jobID=$JOB_ID on $HOSTNAME
 echo + NSLOTS = $NSLOTS
 #
-trimmed="$1"
-name="$2"
-data="$3"
+
 #
 spades.py \
--o ${data}/results/spades/${name} \
+-o ${data}/results/spades/SAMPLE \
 --pe1-1 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/xxxx_R1_PE_trimmed.fastq.gz \
 --pe1-2 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/xxxx_R2_PE_trimmed.fastq.gz \
 --pe1-s /scratch/genomics/USER/PROJECT/data/trimmed_sequences/xxxx_R0_SE_trimmed.fastq.gz \
