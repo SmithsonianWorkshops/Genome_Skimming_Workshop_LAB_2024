@@ -56,4 +56,5 @@ gzip path_to_fastq_file/SAMPLE.fastq path_to_fastq_gz_file/SAMPLE.fastq.gz
 ``````
 However, this can take a long time, up to an hour for some of the files here. Luckily, we do not need fastq.gz read files, our programs can analyze fastq data.
 
-Submit fasterq-dump job files for each of your SRAs in `data/sra/`, using `data/raw` as your output directory. Don't forget that you will need to create `data/raw` first.
+Submit fasterq-dump job files for each of your SRAs in `data/sra/`, using `data/raw` as your output directory.  
+**Don't forget that you will need to create `data/raw` first.**
