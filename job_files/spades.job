@@ -7,8 +7,8 @@
 #$ -l ssd_res=200G -v SSD_SAVE_MAX=0
 #$ -cwd
 #$ -j y
-#$ -N SAMPLE_spades
-#$ -o logs/SAMPLE_spades.log
+#$ -N SRRxxxx_spades
+#$ -o logs/SRRxxxx_spades.log
 #
 # ----------------Modules------------------------- #
 module load tools/ssd
@@ -23,10 +23,10 @@ echo + NSLOTS = $NSLOTS
 
 #
 spades.py \
--o ${data}/results/spades/SAMPLE \
---pe1-1 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/xxxx_R1_PE_trimmed.fastq.gz \
---pe1-2 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/xxxx_R2_PE_trimmed.fastq.gz \
---pe1-s /scratch/genomics/USER/PROJECT/data/trimmed_sequences/xxxx_R0_SE_trimmed.fastq.gz \
+-o $/scratch/genomics/USER/PROJECT/data/results/spades/SRRxxxx \
+--pe1-1 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R1_PE_trimmed.fastq.gz \
+--pe1-2 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R2_PE_trimmed.fastq.gz \
+--pe1-s /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R0_SE_trimmed.fastq.gz \
 -t $NSLOTS  -m 200 --tmp-dir $SSD_DIR
 
 #
