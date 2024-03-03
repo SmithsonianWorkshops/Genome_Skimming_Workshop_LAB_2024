@@ -6,8 +6,8 @@
 #$ -l mres=96G,h_data=12G,h_vmem=12G,himem
 #$ -cwd
 #$ -j y
-#$ -N SAMPLE_getorganelle
-#$ -o logs/SAMPLE_getorganelle.log
+#$ -N SRRxxxx_getorganelle
+#$ -o logs/SRRxxxx_getorganelle.log
 #
 # ----------------Modules------------------------- #
 module load tools/conda
@@ -21,10 +21,10 @@ echo + NSLOTS = $NSLOTS
 
 #
 get_organelle_from_reads.py \
--1 /scratch/nmnh_lab/USER/PROJECT/data/trimmed_sequences/xxxx_R1_PE_trimmed.fastq.gz \
--2 /scratch/nmnh_lab/USER/PROJECT/data/trimmed_sequences/xxxx_R2_PE_trimmed.fastq.gz \
--u /scratch/nmnh_lab/USER/PROJECT/data/trimmed_sequences/xxxx_R0_SE_trimmed.fastq.gz \
--o /scratch/nmnh_lab/USER/PROJECT/data/results/getorganelle/SAMPLE \
+-1 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R1_PE_trimmed.fastq.gz \
+-2 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R2_PE_trimmed.fastq.gz \
+-u /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R0_SE_trimmed.fastq.gz \
+-o /scratch/genomics/USER/PROJECT/data/results/getorganelle/SRRxxxx \
 -F animal_mt \
 -t $NSLOTS
 #
