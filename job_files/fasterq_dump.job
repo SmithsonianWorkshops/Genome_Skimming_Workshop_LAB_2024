@@ -6,8 +6,8 @@
 #$ -l mres=8G
 #$ -cwd
 #$ -j y
-#$ -N SAMPLE_fasterq
-#$ -o logs/SAMPLE/fasterq.log
+#$ -N SRRxxxx_fasterq
+#$ -o logs/SRRxxxx/fasterq.log
 #
 # ----------------Modules------------------------- #
 module load bioinformatics/sratoolkit
@@ -18,12 +18,10 @@ echo + NSLOTS = $NSLOTS
 #
 #
 
-fasterq-dump /scratch/genomics/USER/PROJECT/data/sra/SRRxxxxxxx \
---outdir ${data}scratch/genomics/USER/PROJECT/data/raw/ \
+fasterq-dump /scratch/genomics/USER/PROJECT/data/sra/SRRxxxx \
+--outdir /scratch/genomics/USER/PROJECT/data/raw/ \
 --threads $NSLOTS
 
-mv ${data}/raw/${sample}_1.fastq ${data}/raw/${sample}_R1.fastq
-mv ${data}/raw/${sample}_2.fastq ${data}/raw/${sample}_R2.fastq
 
 # --outdir is the target directory for your converted read files. --threads is
 # number of threads fasterq-dump will use. $NSLOTS tells the program to use the
