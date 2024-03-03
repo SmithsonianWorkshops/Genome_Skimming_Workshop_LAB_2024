@@ -5,8 +5,8 @@
 #$ -l mres=6G,h_data=6G,h_vmem=6G
 #$ -cwd
 #$ -j y
-#$ -N sample_fastqc
-#$ -o logs/sample_fastqc.log
+#$ -N SRRxxxx_1_fastqc
+#$ -o logs/SRRxxxx_1_fastqc.log
 #
 # ----------------Modules------------------------- #
 module load tools/conda
@@ -21,7 +21,7 @@ echo + NSLOTS = $NSLOTS
 #
 fastqc \
 -o /scratch/genomics/data/raw/ \
-/scratch/genomics/macdonaldk/data/raw/xxxxx_R1_xxxxx.fastq.gz
+/scratch/genomics/USER/PROJECT/data/raw/SRRxxxx_1.fastq
 #
 echo = `date` job $JOB_NAME done
 
