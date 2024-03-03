@@ -22,19 +22,21 @@ echo + NSLOTS = $NSLOTS
 
 #
 spades.py \
--o ${data}/results/spades/${name} \
+/scratch/genomics/USER/PROJECT/data/results/mitogenome/SAMPLE.fasta
+-o /scratch/genomics/USER/PROJECT/data/results/quast/SAMPLE \
+-g /scratch/genomics/USER/PROJECT/data/results/mitogenome/SAMPLE.gff \
 --pe1 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/xxxx_R1_PE_trimmed.fastq.gz \
 --pe2 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/xxxx_R2_PE_trimmed.fastq.gz \
 --single /scratch/genomics/USER/PROJECT/data/trimmed_sequences/xxxx_R0_SE_trimmed.fastq.gz \
--t $NSLOTS  -m 200 
+-t $NSLOTS
 
 #
 echo = `date` job $JOB_NAME done
 
 # -o is the path to the directory where you want your results saved
-# --pe1-1 is the path to the file of the paired R1 reads of the first paired-end 
-# library (you can have mutiple libraries as input files). --pe1-2 is the path
-# to the file of the paired R2 reads of the first paired-end library. --pe1-s
+# --pe1 is the path to the file of the paired R1 reads of the first paired-end 
+# library (you can have mutiple libraries as input files). --pe2 is the path
+# to the file of the paired R2 reads of the first paired-end library. --single
 # is the path of the unpaired reads (both R1 and R2 should be in the same file)
 # of the first paired-end library.
 # -t is the number of threads, and -m is the total amount of memory allocated 
