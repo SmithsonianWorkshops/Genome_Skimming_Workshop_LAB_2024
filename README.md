@@ -9,11 +9,11 @@ We will be using Teams for in-session chatting. You are all members of the "Geno
 
 We will be dividing up the analyses this week into sections based on methodology and the programs we will be using. A schedule for the week can be found here XXXXXXXX. We will attempt to keep to this schedule, but we also intend to be flexible.
 
-Section 1 - Hydra
-Section 2 - SRA
-Section 3 - QC and Trimming
-Section 4 - Read Assembl
-Section 5 - Annotation
-Section 6 - Assembly QC and Download Data
-Section 7 - Geneious
-Section 8 - Submission
+Section 1 - Hydra  
+Section 2 - SRA  
+Section 3 - QC and Trimming  
+Section 4 - Read Assembly  
+Section 5 - Annotation  
+Section 6 - Assembly QC and Download Data  
+Section 7 - Geneious  
+Section 8 - Submission  
