@@ -19,7 +19,7 @@ We will supply "generic" hydra .job files for each program. These files will hav
 Job files for all programs can be found here: [Genome skimming 2024
  job files](https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/tree/main/job_files) 
 
-Links to application-specific .job files will be in each respective section. Alternatively, you can download all the job files we will use in thi workshop here [Genome Skimming Job Files](https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/tree/cbd8251c52c64a72c2b3493bd2113870df92c777/job_files). To create your own specific job, I would copy the text of the .job file from the browser and paste it into a new text file on hydra. For example, to make a new fastqc job file:
+Links to application-specific .job files will be in each respective section. To create your own specific job, I would copy the text of the .job file from the browser and paste it into a new text file on hydra. For example, to make a new fastqc job file:
 ```
 nano fastqc_SRR1234567.job
 ```
