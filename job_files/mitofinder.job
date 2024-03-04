@@ -4,7 +4,8 @@
 #$ -pe mthread 4
 #$ -q sThC.q
 #$ -l mres=16G,h_data=4G,h_vmem=4G
-#$ -cwd
+#$ -cwd 
+#$ -wd /scratch/genomics/USER/PROJECT/data/results/mitofinder
 #$ -j y
 #$ -N SRRxxxx_mitofinder
 #$ -o logs/SRRxxxx_mitofinder.log
@@ -21,7 +22,7 @@ mitofinder \
 -j SAMPLE_mitofinder \
 -o 2 \
 -r /scratch/nmnh_lab/genome_skimming/ref/MITOREFERENCE \
--a /path_to_fasta_file/SRRxxxx.fasta \
+-a /scratch/genomics/USER/PROJECT/data/results/spades/SRRxxxx/contig.fasta \
 --new-genes -p $NSLOTS -m 16
 
 #
