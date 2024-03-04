@@ -11,6 +11,13 @@ Make a project-specific directory, with the following subdirectories: `jobs` and
 ```
 mkdir -p <PROJECT>/data/sra <PROJECT>/jobs
 ```
+```
+cd /scratch/genomics/<USER>/<PROJECT>/
+```
+.
+├── data
+│   └── sra
+└── jobs
 
 ### Hydra Jobs
 
