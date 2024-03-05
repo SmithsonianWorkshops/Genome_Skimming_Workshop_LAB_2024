@@ -14,10 +14,11 @@ mkdir -p <PROJECT>/data/sra <PROJECT>/jobs
 ```
 cd /scratch/genomics/<USER>/<PROJECT>/
 ```
-.
+```.
 ├── data
 │   └── sra
 └── jobs
+```
 
 ### Hydra Jobs
 
@@ -26,11 +27,7 @@ We will supply "generic" hydra .job files for each program. These files will hav
 Job files for all programs can be found here: [Genome skimming 2024
  job files](https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/tree/main/job_files) 
 
-Links to application-specific .job files will be in each respective section. To create your own specific job, I would copy the text of the .job file from the browser and paste it into a new text file on hydra. For example, to make a new fastqc job file:
-```
-nano fastqc_SRR1234567.job
-```
-
+Links to application-specific .job files will be in each respective section. To create your own specific job, I copy the text of the .job file from the browser and paste it into a new text file on your laptop. I then make a sample-specific job file by editing the sample name and necessary pathways. Finally, I make make a sample-specific job document in hydra, and copy and paste your job text.
 
 
 
