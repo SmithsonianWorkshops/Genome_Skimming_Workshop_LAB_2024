@@ -34,6 +34,6 @@ nano fastqc_SRR1234567.job
 
 
 
-### Globus
- We will be using the Globus to transfer data from hydra to our local computer. 
+### FileZilla
+ We will be using the FileZilla to transfer data from hydra to our local computer. We will go over the FileZilla settings when we need to transfer our first files. You can also choose to use scp to transfer, if you prefer.
 
