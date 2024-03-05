@@ -7,7 +7,7 @@
 #$ -cwd
 #$ -j y
 #$ -N SRRxxxx_quast
-#$ -o logs/SRRxxxx_quast.log
+#$ -o logs/SRRxxxx_quast.loghttps://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/blob/main/job_files/quast.job
 #
 # ----------------Modules------------------------- #
 module load tools/conda
