@@ -4,7 +4,6 @@
 #$ -pe mthread 10
 #$ -q mThM.q
 #$ -l mres=200G,h_data=20G,h_vmem=20G,himem
-#$ -l ssd_res=200G -v SSD_SAVE_MAX=0
 #$ -cwd
 #$ -j y
 #$ -N SRRxxxx_quast
@@ -21,10 +20,9 @@ echo + NSLOTS = $NSLOTS
 #
 
 #
-spades.py \
+quast.py \
 /scratch/genomics/USER/PROJECT/data/results/mitogenome/SRRxxxx.fasta
 -o /scratch/genomics/USER/PROJECT/data/results/quast/SRRxxxx \
--g /scratch/genomics/USER/PROJECT/data/results/mitogenome/SRRxxxx.gff \
 --pe1 /scratch/genomics/USER/PROJECT/data/trimmed_sequencesSRRxxxx_R1_PE_trimmed.fastq.gz \
 --pe2 /scratch/genomics/USER/PROJECT/data/trimmed_sequencesSRRxxxx_R2_PE_trimmed.fastq.gz \
 --single /scratch/genomics/USER/PROJECT/data/trimmed_sequencesSRRxxxx_R0_SE_trimmed.fastq.gz \
