@@ -6,8 +6,8 @@
 #$ -l mres=200G,h_data=20G,h_vmem=20G,himem
 #$ -cwd
 #$ -j y
-#$ -N SRRxxxx_quast
-#$ -o logs/SRRxxxx_quast.log
+#$ -N SRRxxxx_quast_PROGRAM
+#$ -o logs/SRRxxxx_quast_PROGRM.log
 
 # ----------------Modules------------------------- #
 module load tools/conda
