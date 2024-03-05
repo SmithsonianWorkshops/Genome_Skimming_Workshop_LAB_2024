@@ -24,7 +24,7 @@ get_organelle_from_reads.py \
 -1 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R1_PE_trimmed.fastq.gz \
 -2 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R2_PE_trimmed.fastq.gz \
 -u /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R0_SE_trimmed.fastq.gz \
--o /scratch/genomics/USER/PROJECT/data/results/getorganelle \
+-o /scratch/genomics/USER/PROJECT/data/results/getorganelle/SRRxxxx \
 -F animal_mt -t $NSLOTS
 #
 echo = `date` job $JOB_NAME done
