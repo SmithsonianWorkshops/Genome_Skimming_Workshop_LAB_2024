@@ -16,7 +16,7 @@ fastp does not require an illumina adapter to remove adapter sequences, but you 
 
 Based on the quality of your reads (as determined by fastQC), we may want to edit the parameters in  `fastp.job`. The job file contains descriptions and suggestions for each parameter. Note that the output parameter of the fastp job compresses the trimmed files, to save drive space. Note that the output parameter of the fastp job compresses the trimmed files, to save drive space.
 
-Trimmed reads will be saved in `/data/trimmed_sequences`, so create this directory. 
+Trimmed reads will be saved in `/data/trimmed_sequences/`, so create this directory. 
 
 Create and submit a fastp job for each of your fastq or fastq.gz read files.
 A generic fastqc job can be found here: [fastp.job](https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/blob/main/job_files/fastp.job). 
