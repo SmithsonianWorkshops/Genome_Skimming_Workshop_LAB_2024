@@ -6,8 +6,8 @@
 #$ -l mres=16G,h_data=4G,h_vmem=4G
 #$ -cwd 
 #$ -j y
-#$ -N SRRxxxx_mitofinder
-#$ -o logs/SRRxxxx_mitofinder.log
+#$ -N SRRxxxx_mitofinder_ASSEMBLER
+#$ -o logs/SRRxxxx_mitofinder_ASSEMBLER.log
 #
 # ----------------Modules------------------------- #
 module load bioinformatics/mitofinder
@@ -20,10 +20,11 @@ echo + NSLOTS = $NSLOTS
 cd /scratch/genomics/USER/PROJECT/data/results/mitofinder 
 
 mitofinder \
--j SAMPLE_mitofinder \
+-j SRRxxxx_mitofinder_ASSEMBLER \
 -r /scratch/nmnh_lab/genome_skimming/ref/MITOREFERENCE \
--a /scratch/genomics/USER/PROJECT/data/results/spades/SRRxxxx/contig.fasta \
--o 2 --new-genes -p $NSLOTS -m 16 
+-a /scratch/genomics/USER/PROJECT/data/results/PROGRAM/SRRxxxx/CONTIG_FILE.fasta \
+-o 2 \
+--new-genes -p $NSLOTS -m 16 
 
 #
 echo = `date` job $JOB_NAME done
