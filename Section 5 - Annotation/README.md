@@ -8,9 +8,10 @@ MitoFinder requires a mitochondrial genome database in GenBank (.gb) format.  It
 
 We have multiple phyla-specific reference databases available for usage, as well as a larger Metazoan database.
 
-### Run MitoFinder
-
-Create and submit a MitoFinder job for each of your contig files, from both your SPAdes and GetOrganelle assemblies. A generic MitoFinder job can be found here: [MitoFinder.job](https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/blob/main/job_files/mitofinder.job). You will need to change multiple fields in your MitoFinder jobs. Not only must you change the path to the contig file, but you must also set the genetic code (`-o`) and the reference database (`-r`). See the bottom of the supplied job file for how to set these two parameters.
-
 We need a results folder for Mitofinder: `data/results/mitofinder`. Within this directory will be a sample-specific directory for each contig annotated. Within each of these will be a "SAMPLE_Final_Results" folder, which will contain the mitogenome annotations for that contig.
 
+We are going to annotate both the SPAdes results and the GetOrganelle results with MitoFinder.
+
+Create and submit a MitoFinder job for your contig files, from both your SPAdes and GetOrganelle assemblies. A generic MitoFinder job can be found here: [MitoFinder.job](https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/blob/main/job_files/mitofinder.job). You will need to change multiple fields in your MitoFinder jobs. Not only must you change the path to the contig file, but you must also set the genetic code (`-o`) and the reference database (`-r`). See the bottom of the supplied job file for how to set these two parameters.
+
+**Don't forget that you will need to create `data/results/mitofinder` first.**
