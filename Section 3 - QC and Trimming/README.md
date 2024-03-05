@@ -7,7 +7,7 @@ FastQC evaluates sequences data for a variety of common problems and helps point
 Create and submit a FastQC job for each of your fastq or fastq.gz read files.
 A generic fastqc job can be found here: [FastQC.job](https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/blob/main/job_files/fastqc.job).
 
-Download your FastqQC results using Globus and open the .html files in your browser.
+Download your FastqQC results using Filezilla and open the .html files in your browser.
 
 ### Read Trimming with fastp
 We trim our reads to remove poor quality basepairs and residual adapter sequence using fastp.
