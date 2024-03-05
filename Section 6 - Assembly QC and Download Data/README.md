@@ -14,4 +14,5 @@ We are going to download a significant amount of data for further analyses on ou
 1.  Trimmed Sequences
 2.  GetOrganelle Results
 3.  Mitofinder Final_Results folder
-4.  SPAdes results
+4.  QUAST results
+5.  SPAdes results
