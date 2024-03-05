@@ -21,10 +21,9 @@ cd /scratch/genomics/USER/PROJECT/data/results/mitofinder
 
 mitofinder \
 -j SAMPLE_mitofinder \
--o 2 \
 -r /scratch/nmnh_lab/genome_skimming/ref/MITOREFERENCE \
 -a /scratch/genomics/USER/PROJECT/data/results/spades/SRRxxxx/contig.fasta \
---new-genes -p $NSLOTS -m 16
+-o 2 --new-genes -p $NSLOTS -m 16 
 
 #
 echo = `date` job $JOB_NAME done
