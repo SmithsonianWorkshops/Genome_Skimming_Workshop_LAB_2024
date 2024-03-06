@@ -11,8 +11,8 @@ Don't forget that you will need to create data/results/quast first.
 
 ### Downloading Data
 We are going to download a significant amount of data for further analyses on our laptops.  Using FileZilla, download the following data:
-1.  Trimmed Sequences
+1.  Mitofinder Final_Results folder
 2.  GetOrganelle Results
-3.  Mitofinder Final_Results folder
-4.  QUAST results
-5.  SPAdes results
+3.  QUAST results
+4.  BWA Results
+5.  Botie Results
