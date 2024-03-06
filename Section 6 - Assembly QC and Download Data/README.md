@@ -7,7 +7,7 @@ We need a QUAST results folder for QUAST: data/results/spades/. The QUAST result
 
 Create and submit a QUAST job for your SPAdes contigs.fasta files, and for your "complete" mitogenome assembly from GetOrganelle. A generic QUAST job can be found here: [quast.job](https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/blob/main/job_files/quast.job).
 
-**Don't forget that you will need to create data/results/quast first.**
+**Don't forget that you will need to create data/results/quast/SRRxxxx first.**
 
 
 ### Map Reads to Reference
@@ -19,7 +19,9 @@ gzip -d /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R2_PE_trim
 ```
 Both programs create SAM files, saving them in a samples-specific directory `data/results/bowtie2/SRRxxxx` or `data/results/bwa/SRRxxxx`. Make these directories.
 
-Create and submit both a BWA-mem2 and a Bowtie2 job for your "complete" mitogenome assembly from GetOrganelle. Generic job files can be found here: [bwa.job]() and [bowtie2.job]().
+Create and submit both a BWA-mem2 and a Bowtie2 job for your "complete" mitogenome assembly from GetOrganelle. Generic job files can be found here: [bwa.job](https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/blob/main/job_files/bwa.job) and [bowtie2.job](https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/blob/main/job_files/bowtie2.job).
+
+**Don't forget that you will need to create `data/results/bowtie2/SRRxxxx` and `data/results/bwa/SRRxxxx` first.**
 
 ### Downloading Data from Hydra
 We are going to download a significant amount of data for further analyses on our laptops.  Using FileZilla, download the following data:
