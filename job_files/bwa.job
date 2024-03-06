@@ -1,0 +1,47 @@
+# /bin/sh
+# ----------------Parameters---------------------- #
+#$ -S /bin/sh
+#$ -pe mthread 8
+#$ -q sThC.q
+#$ -l mres=8G,h_data=1G,h_vmem=1G
+#$ -cwd
+#$ -j y
+#$ -N SRRxxxx_bwa_PROGRAM
+#$ -o logs/SRRxxxx_bwa_PROGRAM.log
+
+# ----------------Modules------------------------- #
+module load tools/conda
+start-conda
+conda activate /scratch/nmnh_lab/genome_skimming/envs/bwa-mem2_env
+# ----------------Your Commands------------------- #
+#
+echo + `date` job $JOB_NAME started in $QUEUE with jobID=$JOB_ID on $HOSTNAME
+echo + NSLOTS = $NSLOTS
+#
+bwa-mem2 index \
+-p ref_index \
+/scratch/genomics/USER/PROJECT/data/results/PROGRAM/SRRxxxx/CONTIG_FILE.fasta
+
+#
+bwa-mem2 \
+mem  \
+-t $NSLOTS \
+/scratch/genomics/USER/PROJECT/data/results/PROGRAM/SRRxxxx/CONTIG_FILE.fasta \
+/scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R1_PE_trimmed.fastq \
+/scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R2_PE_trimmed.fastq \
+-o /scratch/genomics/USER/PROJECT/data/results/bwa/SRRxxxx_bwa_PROGRAM 
+
+#
+echo = `date` job $JOB_NAME done
+
+# -o is the path to the directory where you want your results saved
+# --pe1 is the path to the file of the paired R1 reads of the first paired-end 
+# library (you can have mutiple libraries as input files). --pe2 is the path
+# to the file of the paired R2 reads of the first paired-end library. --single
+# is the path of the unpaired reads (both R1 and R2 should be in the same file)
+# of the first paired-end library.
+# -t is the number of threads, and -m is the total amount of memory allocated 
+# --tmp-dir creates a temporary SSD to hold SPAdes temporary files. SPAdes 
+# creates a large number of temporary files, sometimes more than hydra allows.
+# This creates a temporary SSD to hold those files so hydra won't kill the
+# job. we then remove those files with rm -rf $SSD_DIR/*
