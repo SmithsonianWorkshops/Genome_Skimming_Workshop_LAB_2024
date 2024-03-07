@@ -7,7 +7,7 @@
 #$ -cwd
 #$ -j y
 #$ -N SRRxxxx_fasterq
-#$ -o logs/SRRxxxx/fasterq.log
+#$ -o logs/SRRxxxx_fasterq.log
 #
 # ----------------Modules------------------------- #
 module load bioinformatics/sratoolkit
