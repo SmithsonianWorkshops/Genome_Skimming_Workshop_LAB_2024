@@ -22,7 +22,7 @@ cd /scratch/genomics/USER/PROJECT/data/results/mitofinder
 mitofinder \
 -j SRRxxxx_mitofinder_ASSEMBLER \
 -r /scratch/nmnh_lab/genome_skimming/ref/MITOREFERENCE \
--a /scratch/genomics/USER/PROJECT/data/results/PROGRAM/SRRxxxx/CONTIG_FILE.fasta \
+-a /scratch/genomics/USER/PROJECT/data/results/PROGRAM/SRRxxxx/CONTIGFILE.fasta \
 -o 2 \
 --new-genes -p $NSLOTS -m 16 
 

@@ -23,10 +23,10 @@ echo + NSLOTS = $NSLOTS
 fastp \
 -i /scratch/genomics/USER/PROJECT/data/raw/SRRxxxx_1.fastq \
 -I /scratch/genomics/USER/PROJECT/data/raw/SRRxxxx_2.fastq \
--o /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R1_PE_trimmed.fastq.gz \
--O /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R2_PE_trimmed.fastq.gz \
---unpaired1 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R0_SE_trimmed.fastq.gz \
---unpaired2 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R0_SE_trimmed.fastq.gz \
+-o /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R1_PE_trimmed.fastq \
+-O /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R2_PE_trimmed.fastq \
+--unpaired1 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R0_SE_trimmed.fastq \
+--unpaired2 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R0_SE_trimmed.fastq \
 -h logs/SRRxxxx_fastp.html \
 -l 30 -f 3 -F 3 -t 2 -T 2 \
 --cut_tail --cut_tail_window_size 5 --cut_tail_mean_quality 15 \

@@ -1,9 +1,9 @@
 # /bin/sh
 # ----------------Parameters---------------------- #
 #$ -S /bin/sh
-#$ -pe mthread 8
+#$ -pe mthread 5
 #$ -q sThC.q
-#$ -l mres=8G,h_data=1G,h_vmem=1G
+#$ -l mres=5G,h_data=1G,h_vmem=1G
 #$ -cwd
 #$ -j y
 #$ -N SRRxxxx_bwa_PROGRAM
@@ -19,17 +19,17 @@ echo + `date` job $JOB_NAME started in $QUEUE with jobID=$JOB_ID on $HOSTNAME
 echo + NSLOTS = $NSLOTS
 #
 bwa-mem2 index \
--p ref_index \
-/scratch/genomics/USER/PROJECT/data/results/PROGRAM/SRRxxxx/CONTIG_FILE.fasta
+-p /scratch/genomics/USER/PROJECT/data/results/bwa/SRRxxxx_bwa_PROGRAM/ref_index \
+/scratch/genomics/USER/PROJECT/data/results/getorganelle/SRRxxxx/CONTIG_FILE.fasta
 
 #
 bwa-mem2 \
 mem  \
 -t $NSLOTS \
-/scratch/genomics/USER/PROJECT/data/results/PROGRAM/SRRxxxx/CONTIG_FILE.fasta \
+/scratch/genomics/USER/PROJECT/data/results/bwa/SRRxxxx_bwa_PROGRAM/ref_index \
 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R1_PE_trimmed.fastq \
 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R2_PE_trimmed.fastq \
--o /scratch/genomics/USER/PROJECT/data/results/bwa/SRRxxxx_bwa_PROGRAM 
+-o /scratch/genomics/USER/PROJECT/data/results/bwa/SRRxxxx_bwa_PROGRAM/SRRxxxx_bwa_PROGRAM.sam 
 
 #
 echo = `date` job $JOB_NAME done
