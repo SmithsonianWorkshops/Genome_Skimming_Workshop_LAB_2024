@@ -24,9 +24,9 @@ Create and submit both a BWA-mem2 and a Bowtie2 job for your "complete" mitogeno
 **Don't forget that you will need to create `data/results/bowtie2/SRRxxxx` and `data/results/bwa/SRRxxxx` first.**
 
 ### Downloading Data from Hydra
-We are going to download some data for further analyses on our laptops. First, make a directory for each subfolder, label SRRxxxx.  Using FileZilla, download the following data for each sample into it's respective folder:
+We are going to download some data for further analyses on our laptops. First, make a directory for each sample, labeled SRRxxxx.  Using FileZilla, download the following data for each sample into it's respective folder:
 1.  Mitofinder Final_Results folder
-2.  GetOrganelle Contig file
+2.  GetOrganelle _Sequence.fasta
 3.  SPAdes contig.fasta
 4.  QUAST results
 5.  BWA .sam file
