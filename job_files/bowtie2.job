@@ -20,13 +20,13 @@ echo + NSLOTS = $NSLOTS
 #
 bowtie2-build \
 /scratch/genomics/USER/PROJECT/data/results/getorganelle/SRRxxxx/CONTIG_FILE.fasta \
-/scratch/genomics/USER/PROJECT/data/results/bowtie2/SRRxxxx/SRRxxxx_CONTIG_FILE
+/scratch/genomics/USER/PROJECT/data/results/bowtie2/SRRxxxx_bowtie2_PROGRAM/CONTIG_FILE
 #
 bowtie2 \
--x /scratch/genomics/USER/PROJECT/data/results/bowtie2/SRRxxxx/SRRxxxx_CONTIG_FILE \
+-x /scratch/genomics/USER/PROJECT/data/results/bowtie2/SRRxxxx_bowtie2_PROGRAM/CONTIG_FILE \
 -1 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R1_PE_trimmed.fastq \
 -2 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R2_PE_trimmed.fastq \
--S /scratch/genomics/USER/PROJECT/data/results/data/bowtie2/SRRxxxx_bowtie2_PROGRAM.sam \
+-S /scratch/genomics/USER/PROJECT/data/results/data/bowtie2/SRRxxxx_bowtie2_PROGRAM/SRRxxxx_bowtie2_PROGRAM.sam \
 -p $NSLOTS
 
 #
