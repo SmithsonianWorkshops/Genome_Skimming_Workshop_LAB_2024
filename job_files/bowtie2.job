@@ -19,15 +19,16 @@ echo + `date` job $JOB_NAME started in $QUEUE with jobID=$JOB_ID on $HOSTNAME
 echo + NSLOTS = $NSLOTS
 #
 bowtie2-build \
-/scratch/genomics/USER/PROJECT/data/results/getorganelle/SRRxxxx/CONTIG_FILE.fasta \
-/scratch/genomics/USER/PROJECT/data/results/bowtie2/SRRxxxx_bowtie2_PROGRAM/CONTIG_FILE
+/scratch/genomics/USER/PROJECT/data/results/PROGRAM/SRRxxxx/CONTIG_FILE.fasta \
+/scratch/genomics/USER/PROJECT/data/results/bowtie2/SRRxxxx/PROGRAM_contig
 #
 bowtie2 \
--x /scratch/genomics/USER/PROJECT/data/results/bowtie2/SRRxxxx_bowtie2_PROGRAM/CONTIG_FILE \
+-p $NSLOTS \
+-x /scratch/genomics/USER/PROJECT/data/results/bowtie2/SRRxxxx/PROGRAM_contig \
 -1 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R1_PE_trimmed.fastq \
 -2 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R2_PE_trimmed.fastq \
--S /scratch/genomics/USER/PROJECT/data/results/data/bowtie2/SRRxxxx_bowtie2_PROGRAM/SRRxxxx_bowtie2_PROGRAM.sam \
--p $NSLOTS
+| samtools view -F 4 -b > \
+/scratch/genomics/USER/PROJECT/data/results/bowtie2/SRRxxxx/SRRxxxx_bowtie2_PROGRAM.bam
 
 #
 echo = `date` job $JOB_NAME done
