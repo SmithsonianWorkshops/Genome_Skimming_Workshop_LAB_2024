@@ -7,27 +7,21 @@ We need a QUAST results folder for QUAST: data/results/spades/. The QUAST result
 
 Create and submit a QUAST job for your SPAdes contigs.fasta files, and for your "complete" mitogenome assembly from GetOrganelle. A generic QUAST job can be found here: [quast.job](https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/blob/main/job_files/quast.job).
 
-**Don't forget that you will need to create data/results/quast/SRRxxxx first.**
+**Don't forget that you will need to create `data/results/quast/SRRxxxx` first.**
 
 
 ### Map Reads to Reference
-We are also going to map our trimmed reads to our mitochondrial contigs using two programs, [BWA-mem2](https://github.com/bwa-mem2/bwa-mem2), and [Bowtie2](https://github.com/BenLangmead/bowtie2). However, neither program can read compressed sequence data, so first we need to decompress our .fastq.gz files into .fastq files. We do this with gzip.
+We are also going to map our trimmed reads to our getorganelle mitochondrial contigs using the program [Bowtie2](https://github.com/BenLangmead/bowtie2). 
 
-```
-gzip -d /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R1_PE_trimmed.fastq.gz
-gzip -d /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R2_PE_trimmed.fastq.gz
-```
-Both programs create SAM files, saving them in a samples-specific directory `data/results/bowtie2/SRRxxxx` or `data/results/bwa/SRRxxxx`. Make these directories.
+Bowtie2 normally creates a SAM file, saving it in a samples-specific directory `data/results/bowtie2/SRRxxxx`. Make this directory. However, we want a BAM file (a binary version of a SAM file that usually are smaller and more efficient) that also does not contain any unassembled reads, so we are modifying our bowtie2 output using samtools, so the results of this process is a BAM file that only contains information for the reads that assembled to your mitochondrial reference. The samtools command is part of your bowtie2 job file, so you don't have to take any additional actions.
 
-Create and submit both a BWA-mem2 and a Bowtie2 job for your "complete" mitogenome assembly from GetOrganelle. Generic job files can be found here: [bwa.job](https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/blob/main/job_files/bwa.job) and [bowtie2.job](https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/blob/main/job_files/bowtie2.job).
+Create and submit a Bowtie2 job for your "complete" mitogenome assembly from GetOrganelle. A generic job files can be found here: [bowtie2.job](https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/blob/main/job_files/bowtie2.job).
 
-**Don't forget that you will need to create `data/results/bowtie2/SRRxxxx` and `data/results/bwa/SRRxxxx` first.**
+**Don't forget that you will need to create `data/results/bowtie2/SRRxxxx` first.**
 
 ### Downloading Data from Hydra
-We are going to download some data for further analyses on our laptops. First, make a directory for each sample, labeled SRRxxxx.  Using FileZilla, download the following data for each sample into it's respective folder:
-1.  Mitofinder Final_Results folder
+We have finished analyzing our sample data in Hydra, so now we are going to download some data for further analyses on our laptops. First, make a directory for each sample, labeled SRRxxxx.  Using FileZilla, download the following data for each sample into it's respective folder:
+1.  Mitofinder Final_Results folders
 2.  GetOrganelle _Sequence.fasta
-3.  SPAdes contig.fasta
-4.  QUAST results
-5.  BWA .sam file
-6.  Bowtie2 .bam file
+3.  QUAST results folders
+5.  Bowtie2 .bam file
