@@ -28,6 +28,7 @@ fastp \
 --unpaired1 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R0_SE_trimmed.fastq \
 --unpaired2 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R0_SE_trimmed.fastq \
 -h logs/SRRxxxx_fastp.html \
+-j logs/SRRxxxx_fastp.json \
 -l 30 -f 3 -F 3 -t 2 -T 2 \
 --cut_tail --cut_tail_window_size 5 --cut_tail_mean_quality 15 \
 --trim_poly_g \
