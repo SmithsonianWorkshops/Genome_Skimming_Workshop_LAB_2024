@@ -5,8 +5,8 @@
 #$ -l mres=8G,h_data=8G,h_vmem=8G
 #$ -cwd
 #$ -j y
-#$ -N SAMPLE_mitos
-#$ -o logs/SAMPLE_mitos.log
+#$ -N SRRxxxx_mitos_ASSEMBLER
+#$ -o logs/SRRxxxx_mitos_ASSEMBLER.log
 #
 # ----------------Modules------------------------- #
 module load tools/conda
@@ -18,12 +18,12 @@ echo + `date` job $JOB_NAME started in $QUEUE with jobID=$JOB_ID on $HOSTNAME
 echo + NSLOTS = $NSLOTS
 #
 #
-runmitos.py -i ${mitofinder_final_results}/${sample} \
+runmitos.py 
+-i /scratch/genomics/USER/PROJECT/data/results/PROGRAM/SRRxxxx/CONTIGFILE.fasta \
 -c GENETIC_CODE \
--o /scratch/nmnh_lab/macdonaldk/PROJECT/data/results/mitogenome/SAMPLE_mitos \
+-o /scratch/genomics/USER/PROJECT/data/results/mitos/SRRxxxx/ \
 -r /scratch/nmnh_lab/genome_skimming/ref/refseq89m \
--R /scratch/nmnh_lab/genome_skimming/ref/refseq89m \
---debug
+-R /scratch/nmnh_lab/genome_skimming/ref/refseq89m
 #
 echo = `date` job $JOB_NAME done
 
