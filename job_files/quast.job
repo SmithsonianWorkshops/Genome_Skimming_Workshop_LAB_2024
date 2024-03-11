@@ -6,8 +6,8 @@
 #$ -l mres=200G,h_data=40G,h_vmem=40G,himem
 #$ -cwd
 #$ -j y
-#$ -N SRRxxxx_quast_PROGRAM
-#$ -o logs/SRRxxxx_quast_PROGRAM.log
+#$ -N SRRxxxx_quast_ASSEMBLY
+#$ -o logs/SRRxxxx_quast_ASSEMBLY.log
 
 # ----------------Modules------------------------- #
 module load tools/conda
@@ -21,8 +21,8 @@ echo + NSLOTS = $NSLOTS
 
 #
 quast.py \
-/scratch/genomics/USER/PROJECT/data/results/PROGRAM/SRRxxxx/CONTIG_FILE.fasta \
--o /scratch/genomics/USER/PROJECT/data/results/quast/SRRxxxx_quast_PROGRAM \
+/scratch/genomics/USER/PROJECT/data/results/ASSEMBLY/SRRxxxx/CONTIG_FILE.fasta \
+-o /scratch/genomics/USER/PROJECT/data/results/quast/SRRxxxx \
 --pe1 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R1_PE_trimmed.fastq \
 --pe2 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R2_PE_trimmed.fastq \
 --single /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R0_SE_trimmed.fastq \
