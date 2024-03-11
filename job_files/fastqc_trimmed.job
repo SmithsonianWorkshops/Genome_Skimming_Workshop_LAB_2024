@@ -29,7 +29,7 @@ fastqc \
 
 fastqc \
 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R0_SE_trimmed.fastq \
--o /scratch/genomics/USER/PROJECT/data/raw/trimmed_sequences
+-o /scratch/genomics/USER/PROJECT/data/trimmed_sequences
 
 #
 echo = `date` job $JOB_NAME done
