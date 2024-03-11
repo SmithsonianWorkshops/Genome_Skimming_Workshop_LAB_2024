@@ -1,0 +1,824 @@
+```.
+├── data
+│   ├── raw
+│   │   ├── SRR24424978_1.fastq
+│   │   ├── SRR24424978_1_fastqc.html
+│   │   ├── SRR24424978_1_fastqc.zip
+│   │   └── SRR24424978_2.fastq
+│   ├── results
+│   │   ├── bowtie2
+│   │   │   └── SRR24424978
+│   │   │       ├── getorganelle_contig.1.bt2
+│   │   │       ├── getorganelle_contig.2.bt2
+│   │   │       ├── getorganelle_contig.3.bt2
+│   │   │       ├── getorganelle_contig.4.bt2
+│   │   │       ├── getorganelle_contig.rev.1.bt2
+│   │   │       ├── getorganelle_contig.rev.2.bt2
+│   │   │       ├── spades_contigs.1.bt2
+│   │   │       ├── spades_contigs.2.bt2
+│   │   │       ├── spades_contigs.3.bt2
+│   │   │       ├── spades_contigs.4.bt2
+│   │   │       ├── spades_contigs.rev.1.bt2
+│   │   │       ├── spades_contigs.rev.2.bt2
+│   │   │       ├── SRR24424978_bowtie2_getorganelle.bam
+│   │   │       └── SRR24424978_bowtie2_spades.bam
+│   │   ├── bwa
+│   │   │   ├── SRR24424978
+│   │   │   │   ├── getorganelle_ref_index.0123
+│   │   │   │   ├── getorganelle_ref_index.amb
+│   │   │   │   ├── getorganelle_ref_index.ann
+│   │   │   │   ├── getorganelle_ref_index.bwt.2bit.64
+│   │   │   │   ├── getorganelle_ref_index.pac
+│   │   │   │   └── SRR24424978_bwa_getorganelle.sam
+│   │   │   └── SRR24424978_bwa_getorganelle.sam
+│   │   ├── getorganelle
+│   │   │   └── SRR24424978
+│   │   │       ├── animal_mt.K115.complete.graph1.1.path_sequence.fasta
+│   │   │       ├── animal_mt.K115.complete.graph1.selected_graph.gfa
+│   │   │       ├── extended_1_paired.fq
+│   │   │       ├── extended_1_unpaired.fq
+│   │   │       ├── extended_2_paired.fq
+│   │   │       ├── extended_2_unpaired.fq
+│   │   │       ├── extended_3.fq
+│   │   │       ├── extended_K115.assembly_graph.fastg
+│   │   │       ├── extended_K115.assembly_graph.fastg.extend-animal_mt.csv
+│   │   │       ├── extended_K115.assembly_graph.fastg.extend-animal_mt.fastg
+│   │   │       ├── extended_spades
+│   │   │       │   ├── assembly_graph.fastg
+│   │   │       │   ├── assembly_graph_with_scaffolds.gfa
+│   │   │       │   ├── before_rr.fasta
+│   │   │       │   ├── contigs.fasta
+│   │   │       │   ├── contigs.paths
+│   │   │       │   ├── corrected
+│   │   │       │   │   ├── configs
+│   │   │       │   │   │   └── config.info
+│   │   │       │   │   ├── corrected.yaml
+│   │   │       │   │   ├── extended_1_paired.00.0_0.cor.fastq.gz
+│   │   │       │   │   ├── extended_1_unpaired.00.1_0.cor.fastq.gz
+│   │   │       │   │   ├── extended_2_paired.00.0_0.cor.fastq.gz
+│   │   │       │   │   ├── extended_2_unpaired.00.2_0.cor.fastq.gz
+│   │   │       │   │   ├── extended_3.00.3_0.cor.fastq.gz
+│   │   │       │   │   └── extended__unpaired.00.0_0.cor.fastq.gz
+│   │   │       │   ├── dataset.info
+│   │   │       │   ├── input_dataset.yaml
+│   │   │       │   ├── K115
+│   │   │       │   │   ├── assembly_graph.fastg
+│   │   │       │   │   ├── assembly_graph.fastg.extend-animal_mt.csv
+│   │   │       │   │   ├── assembly_graph.fastg.extend-animal_mt.fastg
+│   │   │       │   │   ├── assembly_graph_with_scaffolds.gfa
+│   │   │       │   │   ├── before_rr.fasta
+│   │   │       │   │   ├── configs
+│   │   │       │   │   │   ├── careful_mda_mode.info
+│   │   │       │   │   │   ├── careful_mode.info
+│   │   │       │   │   │   ├── config.info
+│   │   │       │   │   │   ├── construction.info
+│   │   │       │   │   │   ├── detail_info_printer.info
+│   │   │       │   │   │   ├── distance_estimation.info
+│   │   │       │   │   │   ├── large_genome_mode.info
+│   │   │       │   │   │   ├── mda_mode.info
+│   │   │       │   │   │   ├── meta_mode.info
+│   │   │       │   │   │   ├── moleculo_mode.info
+│   │   │       │   │   │   ├── pe_params.info
+│   │   │       │   │   │   ├── plasmid_mode.info
+│   │   │       │   │   │   ├── rna_fast_mode.info
+│   │   │       │   │   │   ├── rna_mode.info
+│   │   │       │   │   │   ├── simplification.info
+│   │   │       │   │   │   ├── toy.info
+│   │   │       │   │   │   └── tsa.info
+│   │   │       │   │   ├── final_contigs.fasta
+│   │   │       │   │   ├── final_contigs.paths
+│   │   │       │   │   ├── final.lib_data
+│   │   │       │   │   ├── intermediate_contigs.fasta
+│   │   │       │   │   ├── path_extend
+│   │   │       │   │   ├── scaffolds.fasta
+│   │   │       │   │   ├── scaffolds.paths
+│   │   │       │   │   ├── simplified_contigs.fasta
+│   │   │       │   │   └── slim.log.txt
+│   │   │       │   ├── K21
+│   │   │       │   │   ├── assembly_graph.fastg
+│   │   │       │   │   ├── assembly_graph_with_scaffolds.gfa
+│   │   │       │   │   ├── before_rr.fasta
+│   │   │       │   │   ├── configs
+│   │   │       │   │   │   ├── careful_mda_mode.info
+│   │   │       │   │   │   ├── careful_mode.info
+│   │   │       │   │   │   ├── config.info
+│   │   │       │   │   │   ├── construction.info
+│   │   │       │   │   │   ├── detail_info_printer.info
+│   │   │       │   │   │   ├── distance_estimation.info
+│   │   │       │   │   │   ├── large_genome_mode.info
+│   │   │       │   │   │   ├── mda_mode.info
+│   │   │       │   │   │   ├── meta_mode.info
+│   │   │       │   │   │   ├── moleculo_mode.info
+│   │   │       │   │   │   ├── pe_params.info
+│   │   │       │   │   │   ├── plasmid_mode.info
+│   │   │       │   │   │   ├── rna_fast_mode.info
+│   │   │       │   │   │   ├── rna_mode.info
+│   │   │       │   │   │   ├── simplification.info
+│   │   │       │   │   │   ├── toy.info
+│   │   │       │   │   │   └── tsa.info
+│   │   │       │   │   ├── final_contigs.fasta
+│   │   │       │   │   ├── final.lib_data
+│   │   │       │   │   └── simplified_contigs.fasta
+│   │   │       │   ├── K55
+│   │   │       │   │   ├── assembly_graph.fastg
+│   │   │       │   │   ├── assembly_graph.fastg.extend-animal_mt.csv
+│   │   │       │   │   ├── assembly_graph.fastg.extend-animal_mt.fastg
+│   │   │       │   │   ├── assembly_graph_with_scaffolds.gfa
+│   │   │       │   │   ├── before_rr.fasta
+│   │   │       │   │   ├── configs
+│   │   │       │   │   │   ├── careful_mda_mode.info
+│   │   │       │   │   │   ├── careful_mode.info
+│   │   │       │   │   │   ├── config.info
+│   │   │       │   │   │   ├── construction.info
+│   │   │       │   │   │   ├── detail_info_printer.info
+│   │   │       │   │   │   ├── distance_estimation.info
+│   │   │       │   │   │   ├── large_genome_mode.info
+│   │   │       │   │   │   ├── mda_mode.info
+│   │   │       │   │   │   ├── meta_mode.info
+│   │   │       │   │   │   ├── moleculo_mode.info
+│   │   │       │   │   │   ├── pe_params.info
+│   │   │       │   │   │   ├── plasmid_mode.info
+│   │   │       │   │   │   ├── rna_fast_mode.info
+│   │   │       │   │   │   ├── rna_mode.info
+│   │   │       │   │   │   ├── simplification.info
+│   │   │       │   │   │   ├── toy.info
+│   │   │       │   │   │   └── tsa.info
+│   │   │       │   │   ├── final_contigs.fasta
+│   │   │       │   │   ├── final.lib_data
+│   │   │       │   │   ├── simplified_contigs.fasta
+│   │   │       │   │   └── slim.log.txt
+│   │   │       │   ├── K85
+│   │   │       │   │   ├── assembly_graph.fastg
+│   │   │       │   │   ├── assembly_graph.fastg.extend-animal_mt.csv
+│   │   │       │   │   ├── assembly_graph.fastg.extend-animal_mt.fastg
+│   │   │       │   │   ├── assembly_graph_with_scaffolds.gfa
+│   │   │       │   │   ├── before_rr.fasta
+│   │   │       │   │   ├── configs
+│   │   │       │   │   │   ├── careful_mda_mode.info
+│   │   │       │   │   │   ├── careful_mode.info
+│   │   │       │   │   │   ├── config.info
+│   │   │       │   │   │   ├── construction.info
+│   │   │       │   │   │   ├── detail_info_printer.info
+│   │   │       │   │   │   ├── distance_estimation.info
+│   │   │       │   │   │   ├── large_genome_mode.info
+│   │   │       │   │   │   ├── mda_mode.info
+│   │   │       │   │   │   ├── meta_mode.info
+│   │   │       │   │   │   ├── moleculo_mode.info
+│   │   │       │   │   │   ├── pe_params.info
+│   │   │       │   │   │   ├── plasmid_mode.info
+│   │   │       │   │   │   ├── rna_fast_mode.info
+│   │   │       │   │   │   ├── rna_mode.info
+│   │   │       │   │   │   ├── simplification.info
+│   │   │       │   │   │   ├── toy.info
+│   │   │       │   │   │   └── tsa.info
+│   │   │       │   │   ├── final_contigs.fasta
+│   │   │       │   │   ├── final.lib_data
+│   │   │       │   │   ├── simplified_contigs.fasta
+│   │   │       │   │   └── slim.log.txt
+│   │   │       │   ├── misc
+│   │   │       │   ├── params.txt
+│   │   │       │   ├── scaffolds.fasta
+│   │   │       │   ├── scaffolds.paths
+│   │   │       │   ├── spades.log
+│   │   │       │   └── tmp
+│   │   │       ├── get_org.log.txt
+│   │   │       └── seed
+│   │   │           ├── animal_mt.initial.fq
+│   │   │           └── animal_mt.initial.sam
+│   │   ├── mitofinder
+│   │   │   ├── SRR24424978
+│   │   │   │   ├── SRR24424978_mitofinder_spades
+│   │   │   │   │   ├── contig_list.txt
+│   │   │   │   │   ├── mito_reference_Vertebrata_23Aug23.fasta
+│   │   │   │   │   ├── SRR24424978_mitofinder_spades_Final_Results
+│   │   │   │   │   │   ├── SRR24424978_mitofinder_spades_final_genes_AA.fasta
+│   │   │   │   │   │   ├── SRR24424978_mitofinder_spades_final_genes_NT.fasta
+│   │   │   │   │   │   ├── SRR24424978_mitofinder_spades_mtDNA_contig_1.fasta
+│   │   │   │   │   │   ├── SRR24424978_mitofinder_spades_mtDNA_contig_1.gb
+│   │   │   │   │   │   ├── SRR24424978_mitofinder_spades_mtDNA_contig_1_genes_AA.fasta
+│   │   │   │   │   │   ├── SRR24424978_mitofinder_spades_mtDNA_contig_1_genes_NT.fasta
+│   │   │   │   │   │   ├── SRR24424978_mitofinder_spades_mtDNA_contig_1.gff
+│   │   │   │   │   │   ├── SRR24424978_mitofinder_spades_mtDNA_contig_1.stats
+│   │   │   │   │   │   ├── SRR24424978_mitofinder_spades_mtDNA_contig_1.tbl
+│   │   │   │   │   │   ├── SRR24424978_mitofinder_spades_mtDNA_contig_2.fasta
+│   │   │   │   │   │   ├── SRR24424978_mitofinder_spades_mtDNA_contig_2.gb
+│   │   │   │   │   │   ├── SRR24424978_mitofinder_spades_mtDNA_contig_2_genes_AA.fasta
+│   │   │   │   │   │   ├── SRR24424978_mitofinder_spades_mtDNA_contig_2_genes_NT.fasta
+│   │   │   │   │   │   ├── SRR24424978_mitofinder_spades_mtDNA_contig_2.gff
+│   │   │   │   │   │   ├── SRR24424978_mitofinder_spades_mtDNA_contig_2.stats
+│   │   │   │   │   │   ├── SRR24424978_mitofinder_spades_mtDNA_contig_2.tbl
+│   │   │   │   │   │   ├── SRR24424978_mitofinder_spades_mtDNA_contig_3.fasta
+│   │   │   │   │   │   ├── SRR24424978_mitofinder_spades_mtDNA_contig_3.gb
+│   │   │   │   │   │   ├── SRR24424978_mitofinder_spades_mtDNA_contig_3_genes_AA.fasta
+│   │   │   │   │   │   ├── SRR24424978_mitofinder_spades_mtDNA_contig_3_genes_NT.fasta
+│   │   │   │   │   │   ├── SRR24424978_mitofinder_spades_mtDNA_contig_3.gff
+│   │   │   │   │   │   ├── SRR24424978_mitofinder_spades_mtDNA_contig_3.stats
+│   │   │   │   │   │   └── SRR24424978_mitofinder_spades_mtDNA_contig_3.tbl
+│   │   │   │   │   ├── SRR24424978_mitofinder_spades_link.scafSeq -> /scratch/genomics/macdonaldk/genome_skimming_2024/data/results/spades/SRR24424978/contigs.fasta
+│   │   │   │   │   └── SRR24424978_mitofinder_spades_tmp
+│   │   │   │   │       ├── Arwen.log
+│   │   │   │   │       ├── ATP6_blast_out.txt
+│   │   │   │   │       ├── ATP8_blast_out.txt
+│   │   │   │   │       ├── contig_id_database.fasta
+│   │   │   │   │       ├── COX1_blast_out.txt
+│   │   │   │   │       ├── COX2_blast_out.txt
+│   │   │   │   │       ├── COX3_blast_out.txt
+│   │   │   │   │       ├── CTYB_blast_out.txt
+│   │   │   │   │       ├── CYTB_blast_out.txt
+│   │   │   │   │       ├── geneChecker_erreur.log
+│   │   │   │   │       ├── geneChecker.log
+│   │   │   │   │       ├── ND1_blast_out.txt
+│   │   │   │   │       ├── ND2_blast_out.txt
+│   │   │   │   │       ├── ND3_blast_out.txt
+│   │   │   │   │       ├── ND4_blast_out.txt
+│   │   │   │   │       ├── ND4L_blast_out.txt
+│   │   │   │   │       ├── ND5_blast_out.txt
+│   │   │   │   │       ├── ND6_blast_out.txt
+│   │   │   │   │       ├── ref_ATP6_database.fasta
+│   │   │   │   │       ├── ref_ATP8_database.fasta
+│   │   │   │   │       ├── ref_COX1_database.fasta
+│   │   │   │   │       ├── ref_COX2_database.fasta
+│   │   │   │   │       ├── ref_COX3_database.fasta
+│   │   │   │   │       ├── ref_CTYB_database.fasta
+│   │   │   │   │       ├── ref_CYTB_database.fasta
+│   │   │   │   │       ├── ref_for_contig_1.fasta
+│   │   │   │   │       ├── ref_for_contig_2.fasta
+│   │   │   │   │       ├── ref_for_contig_3.fasta
+│   │   │   │   │       ├── ref_ND1_database.fasta
+│   │   │   │   │       ├── ref_ND2_database.fasta
+│   │   │   │   │       ├── ref_ND3_database.fasta
+│   │   │   │   │       ├── ref_ND4_database.fasta
+│   │   │   │   │       ├── ref_ND4L_database.fasta
+│   │   │   │   │       ├── ref_ND5_database.fasta
+│   │   │   │   │       ├── ref_ND6_database.fasta
+│   │   │   │   │       ├── ref_rrnL_database.fasta
+│   │   │   │   │       ├── ref_rrnS_database.fasta
+│   │   │   │   │       ├── rrnL_blast_out.txt
+│   │   │   │   │       ├── rrnS_blast_out.txt
+│   │   │   │   │       ├── SRR24424978_mitofinder_spades_blast_out.txt
+│   │   │   │   │       ├── SRR24424978_mitofinder_spades_link.scafSeq.nhr
+│   │   │   │   │       ├── SRR24424978_mitofinder_spades_link.scafSeq.nin
+│   │   │   │   │       ├── SRR24424978_mitofinder_spades_link.scafSeq.nsq
+│   │   │   │   │       ├── SRR24424978_mitofinder_spades_mtDNA_contig_1.arwen
+│   │   │   │   │       ├── SRR24424978_mitofinder_spades_mtDNA_contig_1_raw.gff
+│   │   │   │   │       ├── SRR24424978_mitofinder_spades_mtDNA_contig_1_ref.blast.xml
+│   │   │   │   │       ├── SRR24424978_mitofinder_spades_mtDNA_contig_1_ref.cds.blast.xml
+│   │   │   │   │       ├── SRR24424978_mitofinder_spades_mtDNA_contig_1_ref.cds.fasta
+│   │   │   │   │       ├── SRR24424978_mitofinder_spades_mtDNA_contig_1_ref.fasta
+│   │   │   │   │       ├── SRR24424978_mitofinder_spades_mtDNA_contig_2.arwen
+│   │   │   │   │       ├── SRR24424978_mitofinder_spades_mtDNA_contig_2_raw.gff
+│   │   │   │   │       ├── SRR24424978_mitofinder_spades_mtDNA_contig_3.arwen
+│   │   │   │   │       ├── SRR24424978_mitofinder_spades_mtDNA_contig_3_raw.gff
+│   │   │   │   │       ├── SRR24424978_mitofinder_spades_mtDNA_contig_3_ref.cds.blast.xml
+│   │   │   │   │       ├── SRR24424978_mitofinder_spades_mtDNA_contig_3_ref.cds.fasta
+│   │   │   │   │       └── translated_genes_for_database.fasta
+│   │   │   │   ├── SRR24424978_mitofinder_spades_MitoFinder.log
+│   │   │   │   └── SRR24424978_mitofinder_spades_tmp.gb
+│   │   │   ├── SRR24424978_mitofinder_getorganelle
+│   │   │   │   ├── mito_reference_Vertebrata_23Aug23.fasta
+│   │   │   │   ├── SRR24424978_mitofinder_getorganelle_Final_Results
+│   │   │   │   │   ├── SRR24424978_mitofinder_getorganelle_mtDNA_contig.fasta
+│   │   │   │   │   ├── SRR24424978_mitofinder_getorganelle_mtDNA_contig.gb
+│   │   │   │   │   ├── SRR24424978_mitofinder_getorganelle_mtDNA_contig_genes_AA.fasta
+│   │   │   │   │   ├── SRR24424978_mitofinder_getorganelle_mtDNA_contig_genes_NT.fasta
+│   │   │   │   │   ├── SRR24424978_mitofinder_getorganelle_mtDNA_contig.gff
+│   │   │   │   │   ├── SRR24424978_mitofinder_getorganelle_mtDNA_contig.tbl
+│   │   │   │   │   └── SRR24424978_mitofinder_getorganelle.stats
+│   │   │   │   ├── SRR24424978_mitofinder_getorganelle_link.scafSeq -> /scratch/genomics/macdonaldk/genome_skimming_2024/data/results/getorganelle/SRR24424978/animal_mt.K115.complete.graph1.1.path_sequence.fasta
+│   │   │   │   └── SRR24424978_mitofinder_getorganelle_tmp
+│   │   │   │       ├── Arwen.log
+│   │   │   │       ├── ATP6_blast_out.txt
+│   │   │   │       ├── ATP8_blast_out.txt
+│   │   │   │       ├── contig_id_database.fasta
+│   │   │   │       ├── COX1_blast_out.txt
+│   │   │   │       ├── COX2_blast_out.txt
+│   │   │   │       ├── COX3_blast_out.txt
+│   │   │   │       ├── CTYB_blast_out.txt
+│   │   │   │       ├── CYTB_blast_out.txt
+│   │   │   │       ├── geneChecker_erreur.log
+│   │   │   │       ├── geneChecker.log
+│   │   │   │       ├── ND1_blast_out.txt
+│   │   │   │       ├── ND2_blast_out.txt
+│   │   │   │       ├── ND3_blast_out.txt
+│   │   │   │       ├── ND4_blast_out.txt
+│   │   │   │       ├── ND4L_blast_out.txt
+│   │   │   │       ├── ND5_blast_out.txt
+│   │   │   │       ├── ND6_blast_out.txt
+│   │   │   │       ├── ref_ATP6_database.fasta
+│   │   │   │       ├── ref_ATP8_database.fasta
+│   │   │   │       ├── ref_COX1_database.fasta
+│   │   │   │       ├── ref_COX2_database.fasta
+│   │   │   │       ├── ref_COX3_database.fasta
+│   │   │   │       ├── ref_CTYB_database.fasta
+│   │   │   │       ├── ref_CYTB_database.fasta
+│   │   │   │       ├── ref_for_mtDNA_contig.fasta
+│   │   │   │       ├── ref_ND1_database.fasta
+│   │   │   │       ├── ref_ND2_database.fasta
+│   │   │   │       ├── ref_ND3_database.fasta
+│   │   │   │       ├── ref_ND4_database.fasta
+│   │   │   │       ├── ref_ND4L_database.fasta
+│   │   │   │       ├── ref_ND5_database.fasta
+│   │   │   │       ├── ref_ND6_database.fasta
+│   │   │   │       ├── ref_rrnL_database.fasta
+│   │   │   │       ├── ref_rrnS_database.fasta
+│   │   │   │       ├── rrnL_blast_out.txt
+│   │   │   │       ├── rrnS_blast_out.txt
+│   │   │   │       ├── SRR24424978_mitofinder_getorganelle_blast_out.txt
+│   │   │   │       ├── SRR24424978_mitofinder_getorganelle_link.scafSeq.nhr
+│   │   │   │       ├── SRR24424978_mitofinder_getorganelle_link.scafSeq.nin
+│   │   │   │       ├── SRR24424978_mitofinder_getorganelle_link.scafSeq.nsq
+│   │   │   │       ├── SRR24424978_mitofinder_getorganelle_mtDNA_contig.arwen
+│   │   │   │       ├── SRR24424978_mitofinder_getorganelle_mtDNA_contig_raw.gff
+│   │   │   │       ├── SRR24424978_mitofinder_getorganelle_mtDNA_contig_ref.blast.xml
+│   │   │   │       ├── SRR24424978_mitofinder_getorganelle_mtDNA_contig_ref.cds.blast.xml
+│   │   │   │       ├── SRR24424978_mitofinder_getorganelle_mtDNA_contig_ref.cds.fasta
+│   │   │   │       ├── SRR24424978_mitofinder_getorganelle_mtDNA_contig_ref.fasta
+│   │   │   │       └── translated_genes_for_database.fasta
+│   │   │   ├── SRR24424978_mitofinder_getorganelle_MitoFinder.log
+│   │   │   └── SRR24424978_mitofinder_getorganelle_tmp.gb
+│   │   ├── mitos
+│   │   │   └── SRR24424978
+│   │   │       ├── blast
+│   │   │       │   ├── blast.dat
+│   │   │       │   ├── nuc
+│   │   │       │   │   ├── sequence.fas-0.OH.blast
+│   │   │       │   │   └── sequence.fas-8302.OH.blast
+│   │   │       │   ├── prot
+│   │   │       │   │   ├── sequence.fas-0.atp6.blast
+│   │   │       │   │   ├── sequence.fas-0.atp8.blast
+│   │   │       │   │   ├── sequence.fas-0.atp9.blast
+│   │   │       │   │   ├── sequence.fas-0.cob.blast
+│   │   │       │   │   ├── sequence.fas-0.cox1.blast
+│   │   │       │   │   ├── sequence.fas-0.cox2.blast
+│   │   │       │   │   ├── sequence.fas-0.cox3.blast
+│   │   │       │   │   ├── sequence.fas-0.dpo.blast
+│   │   │       │   │   ├── sequence.fas-0.lagli.blast
+│   │   │       │   │   ├── sequence.fas-0.msh1.blast
+│   │   │       │   │   ├── sequence.fas-0.mttb.blast
+│   │   │       │   │   ├── sequence.fas-0.nad1.blast
+│   │   │       │   │   ├── sequence.fas-0.nad2.blast
+│   │   │       │   │   ├── sequence.fas-0.nad3.blast
+│   │   │       │   │   ├── sequence.fas-0.nad4.blast
+│   │   │       │   │   ├── sequence.fas-0.nad4l.blast
+│   │   │       │   │   ├── sequence.fas-0.nad5.blast
+│   │   │       │   │   ├── sequence.fas-0.nad6.blast
+│   │   │       │   │   ├── sequence.fas-8302.atp6.blast
+│   │   │       │   │   ├── sequence.fas-8302.atp8.blast
+│   │   │       │   │   ├── sequence.fas-8302.atp9.blast
+│   │   │       │   │   ├── sequence.fas-8302.cob.blast
+│   │   │       │   │   ├── sequence.fas-8302.cox1.blast
+│   │   │       │   │   ├── sequence.fas-8302.cox2.blast
+│   │   │       │   │   ├── sequence.fas-8302.cox3.blast
+│   │   │       │   │   ├── sequence.fas-8302.dpo.blast
+│   │   │       │   │   ├── sequence.fas-8302.lagli.blast
+│   │   │       │   │   ├── sequence.fas-8302.msh1.blast
+│   │   │       │   │   ├── sequence.fas-8302.mttb.blast
+│   │   │       │   │   ├── sequence.fas-8302.nad1.blast
+│   │   │       │   │   ├── sequence.fas-8302.nad2.blast
+│   │   │       │   │   ├── sequence.fas-8302.nad3.blast
+│   │   │       │   │   ├── sequence.fas-8302.nad4.blast
+│   │   │       │   │   ├── sequence.fas-8302.nad4l.blast
+│   │   │       │   │   ├── sequence.fas-8302.nad5.blast
+│   │   │       │   │   └── sequence.fas-8302.nad6.blast
+│   │   │       │   └── stst.dat
+│   │   │       ├── ignored.mitos
+│   │   │       ├── mitfi-global
+│   │   │       │   ├── sequence.fas-0_Intron_gpI.cmout
+│   │   │       │   ├── sequence.fas-0_Intron_gpII.cmout
+│   │   │       │   ├── sequence.fas-0_intronout.nc
+│   │   │       │   ├── sequence.fas-0_OL.cmout
+│   │   │       │   ├── sequence.fas-0_rep_originout.nc
+│   │   │       │   ├── sequence.fas-0_rRNAout.nc
+│   │   │       │   ├── sequence.fas-0_rrnL.cmout
+│   │   │       │   ├── sequence.fas-0_rrnS.cmout
+│   │   │       │   ├── sequence.fas-0_trnA.cmout
+│   │   │       │   ├── sequence.fas-0_tRNAout.nc
+│   │   │       │   ├── sequence.fas-0_trnC.cmout
+│   │   │       │   ├── sequence.fas-0_trnD.cmout
+│   │   │       │   ├── sequence.fas-0_trnE.cmout
+│   │   │       │   ├── sequence.fas-0_trnF.cmout
+│   │   │       │   ├── sequence.fas-0_trnG.cmout
+│   │   │       │   ├── sequence.fas-0_trnH.cmout
+│   │   │       │   ├── sequence.fas-0_trnI.cmout
+│   │   │       │   ├── sequence.fas-0_trnK.cmout
+│   │   │       │   ├── sequence.fas-0_trnL1.cmout
+│   │   │       │   ├── sequence.fas-0_trnL2.cmout
+│   │   │       │   ├── sequence.fas-0_trnM.cmout
+│   │   │       │   ├── sequence.fas-0_trnN.cmout
+│   │   │       │   ├── sequence.fas-0_trnP.cmout
+│   │   │       │   ├── sequence.fas-0_trnQ.cmout
+│   │   │       │   ├── sequence.fas-0_trnR.cmout
+│   │   │       │   ├── sequence.fas-0_trnS1.cmout
+│   │   │       │   ├── sequence.fas-0_trnS2.cmout
+│   │   │       │   ├── sequence.fas-0_trnT.cmout
+│   │   │       │   ├── sequence.fas-0_trnV.cmout
+│   │   │       │   ├── sequence.fas-0_trnW.cmout
+│   │   │       │   ├── sequence.fas-0_trnY.cmout
+│   │   │       │   ├── sequence.fas-8302_Intron_gpI.cmout
+│   │   │       │   ├── sequence.fas-8302_Intron_gpII.cmout
+│   │   │       │   ├── sequence.fas-8302_intronout.nc
+│   │   │       │   ├── sequence.fas-8302_OL.cmout
+│   │   │       │   ├── sequence.fas-8302_rep_originout.nc
+│   │   │       │   ├── sequence.fas-8302_rRNAout.nc
+│   │   │       │   ├── sequence.fas-8302_rrnL.cmout
+│   │   │       │   ├── sequence.fas-8302_rrnS.cmout
+│   │   │       │   ├── sequence.fas-8302_trnA.cmout
+│   │   │       │   ├── sequence.fas-8302_tRNAout.nc
+│   │   │       │   ├── sequence.fas-8302_trnC.cmout
+│   │   │       │   ├── sequence.fas-8302_trnD.cmout
+│   │   │       │   ├── sequence.fas-8302_trnE.cmout
+│   │   │       │   ├── sequence.fas-8302_trnF.cmout
+│   │   │       │   ├── sequence.fas-8302_trnG.cmout
+│   │   │       │   ├── sequence.fas-8302_trnH.cmout
+│   │   │       │   ├── sequence.fas-8302_trnI.cmout
+│   │   │       │   ├── sequence.fas-8302_trnK.cmout
+│   │   │       │   ├── sequence.fas-8302_trnL1.cmout
+│   │   │       │   ├── sequence.fas-8302_trnL2.cmout
+│   │   │       │   ├── sequence.fas-8302_trnM.cmout
+│   │   │       │   ├── sequence.fas-8302_trnN.cmout
+│   │   │       │   ├── sequence.fas-8302_trnP.cmout
+│   │   │       │   ├── sequence.fas-8302_trnQ.cmout
+│   │   │       │   ├── sequence.fas-8302_trnR.cmout
+│   │   │       │   ├── sequence.fas-8302_trnS1.cmout
+│   │   │       │   ├── sequence.fas-8302_trnS2.cmout
+│   │   │       │   ├── sequence.fas-8302_trnT.cmout
+│   │   │       │   ├── sequence.fas-8302_trnV.cmout
+│   │   │       │   ├── sequence.fas-8302_trnW.cmout
+│   │   │       │   └── sequence.fas-8302_trnY.cmout
+│   │   │       ├── plots
+│   │   │       │   ├── prot.pdf
+│   │   │       │   ├── rna.dat
+│   │   │       │   ├── rna.pdf
+│   │   │       │   ├── rrnL-4772-6324.ps
+│   │   │       │   ├── rrnL-4772-6324.svg
+│   │   │       │   ├── rrnS-3695-4680.ps
+│   │   │       │   ├── rrnS-3695-4680.svg
+│   │   │       │   ├── stst.pdf
+│   │   │       │   ├── stst-pvalue.pdf
+│   │   │       │   ├── stst-value.pdf
+│   │   │       │   ├── trnA-8744-8812.ps
+│   │   │       │   ├── trnA-8744-8812.svg
+│   │   │       │   ├── trnC-8888-8953.ps
+│   │   │       │   ├── trnC-8888-8953.svg
+│   │   │       │   ├── trnD-10643-10711.ps
+│   │   │       │   ├── trnD-10643-10711.svg
+│   │   │       │   ├── trnE-2505-2575.ps
+│   │   │       │   ├── trnE-2505-2575.svg
+│   │   │       │   ├── trnF-3626-3695.ps
+│   │   │       │   ├── trnF-3626-3695.svg
+│   │   │       │   ├── trnG-13096-13164.ps
+│   │   │       │   ├── trnG-13096-13164.svg
+│   │   │       │   ├── trnH-15256-15324.ps
+│   │   │       │   ├── trnH-15256-15324.svg
+│   │   │       │   ├── trnI-7408-7479.ps
+│   │   │       │   ├── trnI-7408-7479.svg
+│   │   │       │   ├── trnK-11401-11469.ps
+│   │   │       │   ├── trnK-11401-11469.svg
+│   │   │       │   ├── trnL1-15390-15460.ps
+│   │   │       │   ├── trnL1-15390-15460.svg
+│   │   │       │   ├── trnL2-6354-6427.ps
+│   │   │       │   ├── trnL2-6354-6427.svg
+│   │   │       │   ├── trnM-7557-7625.ps
+│   │   │       │   ├── trnM-7557-7625.svg
+│   │   │       │   ├── trnN-8815-8887.ps
+│   │   │       │   ├── trnN-8815-8887.svg
+│   │   │       │   ├── trnP-1903-1972.ps
+│   │   │       │   ├── trnP-1903-1972.svg
+│   │   │       │   ├── trnQ-7487-7557.ps
+│   │   │       │   ├── trnQ-7487-7557.svg
+│   │   │       │   ├── trnR-13518-13587.ps
+│   │   │       │   ├── trnR-13518-13587.svg
+│   │   │       │   ├── trnS1-15325-15390.ps
+│   │   │       │   ├── trnS1-15325-15390.svg
+│   │   │       │   ├── trnS2-10568-10640.ps
+│   │   │       │   ├── trnS2-10568-10640.svg
+│   │   │       │   ├── trnT-1824-1892.ps
+│   │   │       │   ├── trnT-1824-1892.svg
+│   │   │       │   ├── trnV-4681-4751.ps
+│   │   │       │   ├── trnV-4681-4751.svg
+│   │   │       │   ├── trnW-8665-8740.ps
+│   │   │       │   ├── trnW-8665-8740.svg
+│   │   │       │   ├── trnY-8953-9024.ps
+│   │   │       │   └── trnY-8953-9024.svg
+│   │   │       ├── result.bed
+│   │   │       ├── result.faa
+│   │   │       ├── result.fas
+│   │   │       ├── result.geneorder
+│   │   │       ├── result.gff
+│   │   │       ├── result.mitos
+│   │   │       ├── result.png
+│   │   │       ├── result.seq
+│   │   │       └── stst.dat
+│   │   ├── mitos2
+│   │   │   └── SRR24424978
+│   │   │       ├── blast
+│   │   │       │   ├── blast.dat
+│   │   │       │   ├── nuc
+│   │   │       │   │   ├── sequence.fas-0.OH.blast
+│   │   │       │   │   └── sequence.fas-8302.OH.blast
+│   │   │       │   ├── prot
+│   │   │       │   │   ├── sequence.fas-0.atp6.blast
+│   │   │       │   │   ├── sequence.fas-0.atp8.blast
+│   │   │       │   │   ├── sequence.fas-0.atp9.blast
+│   │   │       │   │   ├── sequence.fas-0.cob.blast
+│   │   │       │   │   ├── sequence.fas-0.cox1.blast
+│   │   │       │   │   ├── sequence.fas-0.cox2.blast
+│   │   │       │   │   ├── sequence.fas-0.cox3.blast
+│   │   │       │   │   ├── sequence.fas-0.dpo.blast
+│   │   │       │   │   ├── sequence.fas-0.lagli.blast
+│   │   │       │   │   ├── sequence.fas-0.msh1.blast
+│   │   │       │   │   ├── sequence.fas-0.mttb.blast
+│   │   │       │   │   ├── sequence.fas-0.nad1.blast
+│   │   │       │   │   ├── sequence.fas-0.nad2.blast
+│   │   │       │   │   ├── sequence.fas-0.nad3.blast
+│   │   │       │   │   ├── sequence.fas-0.nad4.blast
+│   │   │       │   │   ├── sequence.fas-0.nad4l.blast
+│   │   │       │   │   ├── sequence.fas-0.nad5.blast
+│   │   │       │   │   ├── sequence.fas-0.nad6.blast
+│   │   │       │   │   ├── sequence.fas-8302.atp6.blast
+│   │   │       │   │   ├── sequence.fas-8302.atp8.blast
+│   │   │       │   │   ├── sequence.fas-8302.atp9.blast
+│   │   │       │   │   ├── sequence.fas-8302.cob.blast
+│   │   │       │   │   ├── sequence.fas-8302.cox1.blast
+│   │   │       │   │   ├── sequence.fas-8302.cox2.blast
+│   │   │       │   │   ├── sequence.fas-8302.cox3.blast
+│   │   │       │   │   ├── sequence.fas-8302.dpo.blast
+│   │   │       │   │   ├── sequence.fas-8302.lagli.blast
+│   │   │       │   │   ├── sequence.fas-8302.msh1.blast
+│   │   │       │   │   ├── sequence.fas-8302.mttb.blast
+│   │   │       │   │   ├── sequence.fas-8302.nad1.blast
+│   │   │       │   │   ├── sequence.fas-8302.nad2.blast
+│   │   │       │   │   ├── sequence.fas-8302.nad3.blast
+│   │   │       │   │   ├── sequence.fas-8302.nad4.blast
+│   │   │       │   │   ├── sequence.fas-8302.nad4l.blast
+│   │   │       │   │   ├── sequence.fas-8302.nad5.blast
+│   │   │       │   │   └── sequence.fas-8302.nad6.blast
+│   │   │       │   └── stst.dat
+│   │   │       ├── ignored.mitos
+│   │   │       ├── mitfi-global
+│   │   │       │   ├── sequence.fas-0_Intron_gpI.cmout
+│   │   │       │   ├── sequence.fas-0_Intron_gpII.cmout
+│   │   │       │   ├── sequence.fas-0_intronout.nc
+│   │   │       │   ├── sequence.fas-0_OL.cmout
+│   │   │       │   ├── sequence.fas-0_rep_originout.nc
+│   │   │       │   ├── sequence.fas-0_rRNAout.nc
+│   │   │       │   ├── sequence.fas-0_rrnL.cmout
+│   │   │       │   ├── sequence.fas-0_rrnS.cmout
+│   │   │       │   ├── sequence.fas-0_trnA.cmout
+│   │   │       │   ├── sequence.fas-0_tRNAout.nc
+│   │   │       │   ├── sequence.fas-0_trnC.cmout
+│   │   │       │   ├── sequence.fas-0_trnD.cmout
+│   │   │       │   ├── sequence.fas-0_trnE.cmout
+│   │   │       │   ├── sequence.fas-0_trnF.cmout
+│   │   │       │   ├── sequence.fas-0_trnG.cmout
+│   │   │       │   ├── sequence.fas-0_trnH.cmout
+│   │   │       │   ├── sequence.fas-0_trnI.cmout
+│   │   │       │   ├── sequence.fas-0_trnK.cmout
+│   │   │       │   ├── sequence.fas-0_trnL1.cmout
+│   │   │       │   ├── sequence.fas-0_trnL2.cmout
+│   │   │       │   ├── sequence.fas-0_trnM.cmout
+│   │   │       │   ├── sequence.fas-0_trnN.cmout
+│   │   │       │   ├── sequence.fas-0_trnP.cmout
+│   │   │       │   ├── sequence.fas-0_trnQ.cmout
+│   │   │       │   ├── sequence.fas-0_trnR.cmout
+│   │   │       │   ├── sequence.fas-0_trnS1.cmout
+│   │   │       │   ├── sequence.fas-0_trnS2.cmout
+│   │   │       │   ├── sequence.fas-0_trnT.cmout
+│   │   │       │   ├── sequence.fas-0_trnV.cmout
+│   │   │       │   ├── sequence.fas-0_trnW.cmout
+│   │   │       │   ├── sequence.fas-0_trnY.cmout
+│   │   │       │   ├── sequence.fas-8302_Intron_gpI.cmout
+│   │   │       │   ├── sequence.fas-8302_Intron_gpII.cmout
+│   │   │       │   ├── sequence.fas-8302_intronout.nc
+│   │   │       │   ├── sequence.fas-8302_OL.cmout
+│   │   │       │   ├── sequence.fas-8302_rep_originout.nc
+│   │   │       │   ├── sequence.fas-8302_rRNAout.nc
+│   │   │       │   ├── sequence.fas-8302_rrnL.cmout
+│   │   │       │   ├── sequence.fas-8302_rrnS.cmout
+│   │   │       │   ├── sequence.fas-8302_trnA.cmout
+│   │   │       │   ├── sequence.fas-8302_tRNAout.nc
+│   │   │       │   ├── sequence.fas-8302_trnC.cmout
+│   │   │       │   ├── sequence.fas-8302_trnD.cmout
+│   │   │       │   ├── sequence.fas-8302_trnE.cmout
+│   │   │       │   ├── sequence.fas-8302_trnF.cmout
+│   │   │       │   ├── sequence.fas-8302_trnG.cmout
+│   │   │       │   ├── sequence.fas-8302_trnH.cmout
+│   │   │       │   ├── sequence.fas-8302_trnI.cmout
+│   │   │       │   ├── sequence.fas-8302_trnK.cmout
+│   │   │       │   ├── sequence.fas-8302_trnL1.cmout
+│   │   │       │   ├── sequence.fas-8302_trnL2.cmout
+│   │   │       │   ├── sequence.fas-8302_trnM.cmout
+│   │   │       │   ├── sequence.fas-8302_trnN.cmout
+│   │   │       │   ├── sequence.fas-8302_trnP.cmout
+│   │   │       │   ├── sequence.fas-8302_trnQ.cmout
+│   │   │       │   ├── sequence.fas-8302_trnR.cmout
+│   │   │       │   ├── sequence.fas-8302_trnS1.cmout
+│   │   │       │   ├── sequence.fas-8302_trnS2.cmout
+│   │   │       │   ├── sequence.fas-8302_trnT.cmout
+│   │   │       │   ├── sequence.fas-8302_trnV.cmout
+│   │   │       │   ├── sequence.fas-8302_trnW.cmout
+│   │   │       │   └── sequence.fas-8302_trnY.cmout
+│   │   │       ├── plots
+│   │   │       │   └── rna.dat
+│   │   │       ├── result.mitos
+│   │   │       ├── sequence.fas
+│   │   │       ├── sequence.fas-0
+│   │   │       ├── sequence.fas-8302
+│   │   │       └── stst.dat
+│   │   ├── quast
+│   │   │   └── SRR24424978
+│   │   ├── spades
+│   │   │   └── SRR24424978
+│   │   │       ├── assembly_graph_after_simplification.gfa
+│   │   │       ├── assembly_graph.fastg
+│   │   │       ├── assembly_graph_with_scaffolds.gfa
+│   │   │       ├── before_rr.fasta
+│   │   │       ├── contigs.fasta
+│   │   │       ├── contigs.paths
+│   │   │       ├── corrected
+│   │   │       │   ├── configs
+│   │   │       │   │   └── config.info
+│   │   │       │   ├── corrected.yaml
+│   │   │       │   ├── SRR24424978_R0_SE_trimmed.00.0_1.cor.fastq.gz
+│   │   │       │   ├── SRR24424978_R1_PE_trimmed.00.0_0.cor.fastq.gz
+│   │   │       │   ├── SRR24424978_R2_PE_trimmed.00.0_0.cor.fastq.gz
+│   │   │       │   └── SRR24424978_R_unpaired.00.0_0.cor.fastq.gz
+│   │   │       ├── dataset.info
+│   │   │       ├── input_dataset.yaml
+│   │   │       ├── K21
+│   │   │       │   ├── configs
+│   │   │       │   │   ├── careful_mda_mode.info
+│   │   │       │   │   ├── careful_mode.info
+│   │   │       │   │   ├── config.info
+│   │   │       │   │   ├── construction.info
+│   │   │       │   │   ├── detail_info_printer.info
+│   │   │       │   │   ├── distance_estimation.info
+│   │   │       │   │   ├── hmm_mode.info
+│   │   │       │   │   ├── isolate_mode.info
+│   │   │       │   │   ├── large_genome_mode.info
+│   │   │       │   │   ├── mda_mode.info
+│   │   │       │   │   ├── meta_mode.info
+│   │   │       │   │   ├── metaplasmid_mode.info
+│   │   │       │   │   ├── metaviral_mode.info
+│   │   │       │   │   ├── moleculo_mode.info
+│   │   │       │   │   ├── pe_params.info
+│   │   │       │   │   ├── plasmid_mode.info
+│   │   │       │   │   ├── rna_mode.info
+│   │   │       │   │   ├── rnaviral_mode.info
+│   │   │       │   │   ├── simplification.info
+│   │   │       │   │   ├── toy.info
+│   │   │       │   │   └── tsa.info
+│   │   │       │   ├── final.lib_data
+│   │   │       │   └── simplified_contigs
+│   │   │       │       ├── contigs_info
+│   │   │       │       ├── contigs.off
+│   │   │       │       └── contigs.seq
+│   │   │       ├── K33
+│   │   │       │   ├── configs
+│   │   │       │   │   ├── careful_mda_mode.info
+│   │   │       │   │   ├── careful_mode.info
+│   │   │       │   │   ├── config.info
+│   │   │       │   │   ├── construction.info
+│   │   │       │   │   ├── detail_info_printer.info
+│   │   │       │   │   ├── distance_estimation.info
+│   │   │       │   │   ├── hmm_mode.info
+│   │   │       │   │   ├── isolate_mode.info
+│   │   │       │   │   ├── large_genome_mode.info
+│   │   │       │   │   ├── mda_mode.info
+│   │   │       │   │   ├── meta_mode.info
+│   │   │       │   │   ├── metaplasmid_mode.info
+│   │   │       │   │   ├── metaviral_mode.info
+│   │   │       │   │   ├── moleculo_mode.info
+│   │   │       │   │   ├── pe_params.info
+│   │   │       │   │   ├── plasmid_mode.info
+│   │   │       │   │   ├── rna_mode.info
+│   │   │       │   │   ├── rnaviral_mode.info
+│   │   │       │   │   ├── simplification.info
+│   │   │       │   │   ├── toy.info
+│   │   │       │   │   └── tsa.info
+│   │   │       │   ├── final.lib_data
+│   │   │       │   └── simplified_contigs
+│   │   │       │       ├── contigs_info
+│   │   │       │       ├── contigs.off
+│   │   │       │       └── contigs.seq
+│   │   │       ├── K55
+│   │   │       │   ├── assembly_graph_after_simplification.gfa
+│   │   │       │   ├── assembly_graph.fastg
+│   │   │       │   ├── assembly_graph_with_scaffolds.gfa
+│   │   │       │   ├── before_rr.fasta
+│   │   │       │   ├── configs
+│   │   │       │   │   ├── careful_mda_mode.info
+│   │   │       │   │   ├── careful_mode.info
+│   │   │       │   │   ├── config.info
+│   │   │       │   │   ├── construction.info
+│   │   │       │   │   ├── detail_info_printer.info
+│   │   │       │   │   ├── distance_estimation.info
+│   │   │       │   │   ├── hmm_mode.info
+│   │   │       │   │   ├── isolate_mode.info
+│   │   │       │   │   ├── large_genome_mode.info
+│   │   │       │   │   ├── mda_mode.info
+│   │   │       │   │   ├── meta_mode.info
+│   │   │       │   │   ├── metaplasmid_mode.info
+│   │   │       │   │   ├── metaviral_mode.info
+│   │   │       │   │   ├── moleculo_mode.info
+│   │   │       │   │   ├── pe_params.info
+│   │   │       │   │   ├── plasmid_mode.info
+│   │   │       │   │   ├── rna_mode.info
+│   │   │       │   │   ├── rnaviral_mode.info
+│   │   │       │   │   ├── simplification.info
+│   │   │       │   │   ├── toy.info
+│   │   │       │   │   └── tsa.info
+│   │   │       │   ├── final_contigs.fasta
+│   │   │       │   ├── final_contigs.paths
+│   │   │       │   ├── final.lib_data
+│   │   │       │   ├── path_extend
+│   │   │       │   ├── scaffolds.fasta
+│   │   │       │   └── scaffolds.paths
+│   │   │       ├── misc
+│   │   │       ├── params.txt
+│   │   │       ├── pipeline_state
+│   │   │       │   ├── stage_0_before_start
+│   │   │       │   ├── stage_10_as_finish
+│   │   │       │   ├── stage_11_bs
+│   │   │       │   ├── stage_12_terminate
+│   │   │       │   ├── stage_1_ec_start
+│   │   │       │   ├── stage_2_ec_runtool
+│   │   │       │   ├── stage_3_ec_compress
+│   │   │       │   ├── stage_4_ec_finish
+│   │   │       │   ├── stage_5_as_start
+│   │   │       │   ├── stage_6_k21
+│   │   │       │   ├── stage_7_k33
+│   │   │       │   ├── stage_8_k55
+│   │   │       │   └── stage_9_copy_files
+│   │   │       ├── run_spades.sh
+│   │   │       ├── run_spades.yaml
+│   │   │       ├── scaffolds.fasta
+│   │   │       ├── scaffolds.paths
+│   │   │       ├── spades.log
+│   │   │       └── warnings.log
+│   │   └── SRR24424978
+│   │       └── SRR24424978_quast_spades
+│   │           ├── basic_stats
+│   │           │   ├── contigs_coverage_histogram.pdf
+│   │           │   ├── contigs_GC_content_plot.pdf
+│   │           │   ├── coverage_histogram.pdf
+│   │           │   ├── cumulative_plot.pdf
+│   │           │   ├── GC_content_plot.pdf
+│   │           │   └── Nx_plot.pdf
+│   │           ├── icarus.html
+│   │           ├── icarus_viewers
+│   │           │   └── contig_size_viewer.html
+│   │           ├── quast.log
+│   │           ├── reads_stats
+│   │           │   ├── contigs.is.txt
+│   │           │   ├── contigs.sam.header
+│   │           │   ├── contigs.stat
+│   │           │   ├── reads_report.tex
+│   │           │   ├── reads_report.tsv
+│   │           │   ├── reads_report.txt
+│   │           │   ├── reads_stats.err
+│   │           │   └── reads_stats.log
+│   │           ├── report.html
+│   │           ├── report.pdf
+│   │           ├── report.tex
+│   │           ├── report.tsv
+│   │           ├── report.txt
+│   │           ├── transposed_report.tex
+│   │           ├── transposed_report.tsv
+│   │           └── transposed_report.txt
+│   ├── sra
+│   │   ├── SRR20648428
+│   │   │   └── SRR20648428.sra
+│   │   └── SRR24424978
+│   │       └── SRR24424978.sra
+│   └── trimmed_sequences
+│       ├── SRR24424978_R0_SE_trimmed.fastq
+│       ├── SRR24424978_R1_PE_trimmed.fastq
+│       └── SRR24424978_R2_PE_trimmed.fastq
+└── jobs
+    ├── bowtie2_getorganelle_SRR24424978.job
+    ├── bowtie2_spades_SRR24424978.job
+    ├── bwa_getorganelle_SRR24424978.job
+    ├── fasterqdump_SRR24424978.job
+    ├── fastp_SRR24424978.job
+    ├── fastqc_SRR24424978_1.job
+    ├── fastqc_SRR24424978_trimmed.job
+    ├── getorganelle_SRR24424978.job
+    ├── logs
+    │   ├── SRR24424978_bowtie2_getorganelle.log
+    │   ├── SRR24424978_bowtie2_spades.log
+    │   ├── SRR24424978_bwa_getorganelle.log
+    │   ├── SRR24424978_getorganelle.log
+    │   ├── SRR24424978_mitofinder_getorganelle.log
+    │   ├── SRR24424978_mitofinder_spades.log
+    │   ├── SRR24424978_mitos_getorganelle.log
+    │   ├── SRR24424978_quast_getorganelle.log
+    │   ├── SRR24424978_quast_spades.log
+    │   ├── SRR24424978_spades.log
+    │   └── SRR24424978_trim.log
+    ├── mitofinder_getorganelle_SRR24424978.job
+    ├── mitofinder_spades_SRR24424978.job
+    ├── mitos_getorganelle_SRR24424978.job
+    ├── quast_getorganelle_SRR24424978.job
+    ├── quast_spades_SRR2442497.job
+    └── spades_SRR24424978.job```
