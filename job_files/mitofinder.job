@@ -4,7 +4,7 @@
 #$ -pe mthread 4
 #$ -q sThC.q
 #$ -l mres=16G,h_data=4G,h_vmem=4G
-#$ -cwd 
+#$ -cwd
 #$ -j y
 #$ -N SRRxxxx_mitofinder_ASSEMBLER
 #$ -o logs/SRRxxxx_mitofinder_ASSEMBLER.log
@@ -17,14 +17,14 @@ echo + `date` job $JOB_NAME started in $QUEUE with jobID=$JOB_ID on $HOSTNAME
 echo + NSLOTS = $NSLOTS
 #
 #
-cd /scratch/genomics/USER/PROJECT/data/results/mitofinder 
+cd /scratch/genomics/USER/PROJECT/data/results/mitofinder/
 
 mitofinder \
 -j SRRxxxx_mitofinder_ASSEMBLER \
 -r /scratch/nmnh_lab/genome_skimming/ref/MITOREFERENCE \
--a /scratch/genomics/USER/PROJECT/data/results/PROGRAM/SRRxxxx/CONTIGFILE.fasta \
--o 2 \
---new-genes -p $NSLOTS -m 16 
+-a /scratch/genomics/USER/PROJECT/data/results/ASSEMBLER/SRRxxxx/CONTIG_FILE.fasta \
+-o GENETIC_CODE \
+--new-genes -p $NSLOTS -m 16
 
 #
 echo = `date` job $JOB_NAME done
