@@ -33,12 +33,10 @@ echo = `date` job $JOB_NAME done
 
 # -o is the path to the directory where you want your results saved
 # --pe1 is the path to the file of the paired R1 reads of the first paired-end 
-# library (you can have mutiple libraries as input files). --pe2 is the path
-# to the file of the paired R2 reads of the first paired-end library. --single
-# is the path of the unpaired reads (both R1 and R2 should be in the same file)
-# of the first paired-end library.
-# -t is the number of threads, and -m is the total amount of memory allocated 
-# --tmp-dir creates a temporary SSD to hold SPAdes temporary files. SPAdes 
-# creates a large number of temporary files, sometimes more than hydra allows.
-# This creates a temporary SSD to hold those files so hydra won't kill the
-# job. we then remove those files with rm -rf $SSD_DIR/*
+# library (you can have mutiple libraries as input files). 
+# --pe2 is the path to the file of the paired R2 reads of the first paired-end 
+# library. 
+# --single is the path of the unpaired reads (both R1 and R2 should be in the 
+# same file) of the first paired-end library.
+# -t is the number of threads
+# -m is the total amount of memory allocated 
