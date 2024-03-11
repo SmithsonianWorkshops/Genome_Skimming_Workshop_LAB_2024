@@ -17,9 +17,12 @@ Create and submit a MitoFinder job for your contig files, from both your SPAdes 
 **Don't forget that you will need to create `data/results/mitofinder` first.**
 
 ### MITOS
-MitoFinder does not always do a great job of annotating all the features present in your assembly, especially when there are not closely related taxa in the reference library. In these instances, MITOS can sometimes annotate genes that MitoFinder was not able to find. However, even with good references, MITOS can sometimes find some features, such as tRNA's and rRNA's, that MitoFinder does not, so I always run this, and only use as needed. For this pipeline, MITOS uses the contigs in the MitoFinder Final Results directory created in the previous step.  
+MitoFinder does not always do a great job of annotating all the features present in your assembly, especially when there are not closely related taxa in the reference library. In these instances, MITOS can sometimes annotate genes that MitoFinder was not able to find. However, even with good references, MITOS can sometimes find some features, such as tRNA's and rRNA's, that MitoFinder does not. We will use the GetOrganelle contig file as our input mitogenome for MITOS.  
 
-Run the  MITOS for annotating MitoFinder contigs shell script, including the path to the directory containng your sample-specific MitoFinder directories files and the number representing the genetic code you wish to use. For most, the path should be something like: `/scratch/genomics/<USERNAME>/<PROJECT>/data/results/mitofinder_final_results/`. The genetic code will most likely be either "2" (for vertebrate mitochondrial DNA) or "5" (for invertebrate mitochondrial DNA). For other taxa, see the `.sh` or `.job ` file for a complete list. 
+MITOS requires a reference database. The developers have supplied one for our usage, and while it is possible to make your own, it is not nearly as simple as it is in MitoFinder, so we will use the available one.
+
+Create and submit a MITOS job for your GetOrganelle contig file. A generic MITOS job can be found here: [MITOS.job](https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/blob/main/job_files/mitos.job). In addition to your input and output paths, you will also need to change the genetic code (-c) used before submitting the job.
+
 ```
 sh mitos_annotate_mitofinder.sh <path_to_mitofinder_final_results> <genetic_code>
 ```
