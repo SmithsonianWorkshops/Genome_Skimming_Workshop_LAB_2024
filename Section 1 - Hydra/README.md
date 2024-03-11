@@ -14,11 +14,15 @@ mkdir -p <PROJECT>/data/sra <PROJECT>/jobs
 ```
 cd /scratch/genomics/<USER>/<PROJECT>/
 ```
+
+This is what your current directory tree should look like:
+
 ```.
 ├── data
 │   └── sra
 └── jobs
 ```
+To see what your final directory will look like, you can go here: [Final_Directory_Tree](https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/blob/main/images/Final_Directory_Tree).
 
 ### Hydra Jobs
 
