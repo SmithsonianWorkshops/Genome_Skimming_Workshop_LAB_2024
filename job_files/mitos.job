@@ -1,7 +1,7 @@
 #!/bin/sh
 # ----------------Parameters---------------------- #
 #$ -S /bin/sh
-#$ -q mThC.q
+#$ -q sThC.q
 #$ -l mres=8G,h_data=8G,h_vmem=8G
 #$ -cwd
 #$ -j y
@@ -23,7 +23,8 @@ runmitos.py
 -c GENETIC_CODE \
 -o /scratch/genomics/USER/PROJECT/data/results/mitos/SRRxxxx/ \
 -r /scratch/nmnh_lab/genome_skimming/ref/refseq89m \
--R /scratch/nmnh_lab/genome_skimming/ref/refseq89m
+-R /scratch/nmnh_lab/genome_skimming/ref/refseq89m \
+--debug
 #
 echo = `date` job $JOB_NAME done
 
@@ -34,7 +35,7 @@ echo = `date` job $JOB_NAME done
 # -R is the base directory containing thd reference data
 # For -r and -R, I use the same path, and it works. Both should not be
 # necessary, but I get an error if both are not included.
-# --debug gives a better log output. Typically, little is put into the log,
+# --debug gives a better log output. Without this, little is put into the log,
 # especially when there is an error.
 
 # GENETIC_CODE

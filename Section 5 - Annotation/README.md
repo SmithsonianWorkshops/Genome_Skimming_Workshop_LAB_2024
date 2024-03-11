@@ -15,3 +15,13 @@ We are going to annotate both the SPAdes results and the GetOrganelle results wi
 Create and submit a MitoFinder job for your contig files, from both your SPAdes and GetOrganelle assemblies. A generic MitoFinder job can be found here: [MitoFinder.job](https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/blob/main/job_files/mitofinder.job). You will need to change multiple fields in your MitoFinder jobs. Not only must you change the path to the contig file, but you must also set the genetic code (`-o`) and the reference database (`-r`). See the bottom of the supplied job file for how to set these two parameters.
 
 **Don't forget that you will need to create `data/results/mitofinder` first.**
+
+### MITOS
+MitoFinder does not always do a great job of annotating all the features present in your assembly, especially when there are not closely related taxa in the reference library. In these instances, MITOS can sometimes annotate genes that MitoFinder was not able to find. However, even with good references, MITOS can sometimes find some features, such as tRNA's and rRNA's, that MitoFinder does not, so I always run this, and only use as needed. For this pipeline, MITOS uses the contigs in the MitoFinder Final Results directory created in the previous step.  
+
+Run the  MITOS for annotating MitoFinder contigs shell script, including the path to the directory containng your sample-specific MitoFinder directories files and the number representing the genetic code you wish to use. For most, the path should be something like: `/scratch/genomics/<USERNAME>/<PROJECT>/data/results/mitofinder_final_results/`. The genetic code will most likely be either "2" (for vertebrate mitochondrial DNA) or "5" (for invertebrate mitochondrial DNA). For other taxa, see the `.sh` or `.job ` file for a complete list. 
+```
+sh mitos_annotate_mitofinder.sh <path_to_mitofinder_final_results> <genetic_code>
+```
+
+Results of these analyses are saved in `<PROJECT>/data/results/mitos_mitofinder`. The results for each sample will be in a separate folder, named with the sample name.
