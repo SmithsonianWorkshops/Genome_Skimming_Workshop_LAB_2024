@@ -20,7 +20,7 @@ To download SRAs, you can either submit a separate prefetch command for each of 
 
 Download your SRA files.
 ```
-prefetch SRRxxxxxxxx
+prefetch SRRxxxx
 ```
 or
 
@@ -44,24 +44,20 @@ vdb-config --interactive
 Try downloading your SRA files again
 
 ```
-prefetch --option-file SraAccList.csv
+prefetch SRRxxxx
 ```
 
 You can also check the integrity of the requested SRA data using vdb-validate
 
 ```
-vdb-validate --option-file SraAccList.csv
+vdb-validate SRRxxxx
 ```
-
+**I would recommend having this SRA accession number handy on your laptop, because you will be using it a lot, so having the ability to quickly copy it anytime is very useful.**
 
 Prefetch downloads files in SRA format (ending in .sra). These need to be converted to fastq files. For this, we use another program from sratoolkit called fasterq-dump. We run this in a job, which can be found here:
 [fasterq-dump](https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/raw/main/job_files/fasterq_dump.job)
 
-Fasterq-dump converts SRA data to fastq data, which can often be very large. Typically, we would subsequently compress fastq files to fastq.gz files, using gzip, as such:
-```
-gzip path_to_fastq_file/SAMPLE.fastq path_to_fastq_gz_file/SAMPLE.fastq.gz
-``````
-However, this can take a long time, over an hour for some of the files here. Luckily, we do not need fastq.gz read files, our programs can analyze fastq data.
+Fasterq-dump converts SRA data to fastq data, which can often be very large. Typically, we would subsequently compress fastq files to fastq.gz files, using gzip. However, this can take a long time, over an hour for some of the files here. Luckily, we do not need fastq.gz read files, our programs can analyze fastq data. 
 
 Submit fasterq-dump job files for each of your SRAs in `data/sra/`, using `data/raw` as your output directory.  
 **Don't forget that you will need to create `data/raw` first.**
