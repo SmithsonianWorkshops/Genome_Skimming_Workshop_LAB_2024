@@ -36,6 +36,7 @@ echo = `date` job $JOB_NAME done
 # unpaired reads are saved into the same file.
 # -o is where the output folder will be saved.
 # -F is the type of organelle you are asking the program to find.
+# -t is the number of threads requested
 # Don't forget to replace USERNAME with your username, and PROJECT with your
 # project name.
 # --reduce-reads-for-coverage inf
