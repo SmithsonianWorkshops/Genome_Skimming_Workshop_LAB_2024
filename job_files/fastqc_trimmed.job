@@ -20,15 +20,15 @@ echo + NSLOTS = $NSLOTS
 
 #
 fastqc \
-/scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R1_PE.fastq \
+/scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R1_PE_trimmed.fastq \
 -o /scratch/genomics/USER/PROJECT/data/trimmed_sequences
 
 fastqc \
-/scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R2_PE.fastq \
+/scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R2_PE_trimmed.fastq \
 -o /scratch/genomics/USER/PROJECT/data/trimmed_sequences
 
 fastqc \
-/scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R0_SE.fastq \
+/scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R0_SE_trimmed.fastq \
 -o /scratch/genomics/USER/PROJECT/data/raw/trimmed_sequences
 
 #
