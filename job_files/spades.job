@@ -3,7 +3,7 @@
 #$ -S /bin/sh
 #$ -pe mthread 10
 #$ -q mThM.q
-#$ -l mres=200G,h_data=20G,h_vmem=20G,himem
+#$ -l mres=300G,h_data=30G,h_vmem=30G,himem
 #$ -l ssd_res=200G -v SSD_SAVE_MAX=0
 #$ -cwd
 #$ -j y
@@ -33,11 +33,13 @@ echo = `date` job $JOB_NAME done
 
 # -o is the path to the directory where you want your results saved
 # --pe1-1 is the path to the file of the paired R1 reads of the first paired-end 
-# library (you can have mutiple libraries as input files). --pe1-2 is the path
-# to the file of the paired R2 reads of the first paired-end library. --pe1-s
-# is the path of the unpaired reads (both R1 and R2 should be in the same file)
-# of the first paired-end library.
-# -t is the number of threads, and -m is the total amount of memory allocated 
+# library (you can have mutiple libraries as input files). 
+# --pe1-2 is the path to the file of the paired R2 reads of the first paired-end
+# library. 
+# --pe1-s is the path of the unpaired reads (both R1 and R2 should be in the
+#  same file) of the first paired-end library.
+# -t is the number of threads
+# -m is the total amount of memory allocated 
 # --tmp-dir creates a temporary SSD to hold SPAdes temporary files. SPAdes 
 # creates a large number of temporary files, sometimes more than hydra allows.
 # This creates a temporary SSD to hold those files so hydra won't kill the
