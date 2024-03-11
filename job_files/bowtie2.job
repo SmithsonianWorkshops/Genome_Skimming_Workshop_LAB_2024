@@ -6,8 +6,8 @@
 #$ -l mres=24G,h_data=4G,h_vmem=4G
 #$ -cwd
 #$ -j y
-#$ -N SRRxxxx_bowtie2_PROGRAM
-#$ -o logs/SRRxxxx_bowtie2_PROGRAM.log
+#$ -N SRRxxxx_bowtie2_ASSEMBLY
+#$ -o logs/SRRxxxx_bowtie2_ASSEMBLY.log
 
 # ----------------Modules------------------------- #
 module load tools/conda
@@ -19,12 +19,12 @@ echo + `date` job $JOB_NAME started in $QUEUE with jobID=$JOB_ID on $HOSTNAME
 echo + NSLOTS = $NSLOTS
 #
 bowtie2-build \
-/scratch/genomics/USER/PROJECT/data/results/PROGRAM/SRRxxxx/CONTIG_FILE.fasta \
-/scratch/genomics/USER/PROJECT/data/results/bowtie2/SRRxxxx/PROGRAM_contig
+/scratch/genomics/USER/PROJECT/data/results/ASSEMBLY/SRRxxxx/CONTIG_FILE.fasta \
+/scratch/genomics/USER/PROJECT/data/results/bowtie2/SRRxxxx/ASSEMBLY_contig
 #
 bowtie2 \
 -p $NSLOTS \
--x /scratch/genomics/USER/PROJECT/data/results/bowtie2/SRRxxxx/PROGRAM_contig \
+-x /scratch/genomics/USER/PROJECT/data/results/bowtie2/SRRxxxx/ASSEMBLY_contig \
 -1 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R1_PE_trimmed.fastq \
 -2 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R2_PE_trimmed.fastq \
 | samtools view -F 4 -b > \
