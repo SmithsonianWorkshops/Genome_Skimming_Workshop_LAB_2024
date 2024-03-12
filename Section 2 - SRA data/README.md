@@ -55,7 +55,7 @@ vdb-validate SRRxxxx
 **I would recommend having this SRA accession number handy on your laptop, because you will be using it a lot, so having the ability to quickly copy it anytime is very useful.**
 
 Prefetch downloads files in SRA format (ending in .sra). These need to be converted to fastq files. For this, we use another program from sratoolkit called fasterq-dump. We run this in a job, which can be found here:
-[fasterq-dump](https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/raw/main/job_files/fasterq_dump.job)
+[fasterq-dump.job](https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/raw/main/job_files/fasterq_dump.job)
 
 Fasterq-dump converts SRA data to fastq data, which can often be very large. Typically, we would subsequently compress fastq files to fastq.gz files, using gzip. However, this can take a long time, over an hour for some of the files here. Luckily, we do not need fastq.gz read files, our programs can analyze fastq data. 
 
