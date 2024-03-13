@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="csp-nonce" content="0046ac79-b60d-4831-b90f-95d73e096ed6">
+        
+        
+        <meta name="description" content="We are operating under the Carpentries Code of Conduct.">
+        
+        <title>Introduction to Hydra - HackMD</title>
+        <link rel="icon" type="image/png" href="https://hackmd.io/favicon.png">
+        <link rel="apple-touch-icon" href="https://hackmd.io/apple-touch-icon.png">
+        
+<script nonce="0046ac79-b60d-4831-b90f-95d73e096ed6">
+  window.domain = 'hackmd.io'
+  window.urlpath = ''
+  window.debug = false
+  window.version = '1.3.0'
+  window.brand = 'HackMD'
+
+  
+
+  window.GOOGLE_API_KEY = 'AIzaSyCjSrqWHhmWJnoI7JlD88XDSaBgiKbaenA'
+  window.GOOGLE_CLIENT_ID = '911617723593-drikdibvvn63slfd6kbqigo8ql1no55s.apps.googleusercontent.com'
+  window.DROPBOX_APP_KEY = 'rdoizrlnkuha23r'
+  
+  window.PLANTUML_SERVER = 'https://ptuml.hackmd.io'
+
+  window.ASSET_URL = 'https://assets.hackmd.io'
+
+  window.USER_CAN_CREATE_TEAM = true
+  window.USER_CAN_DELETE_ACCOUNT = true
+  window.USER_DELETE_ACCOUNT_VIA_EMAIL = true
+  window.PAYMENT_ENABLED = true
+  window.PAYMENT_PROMOTION_BANNER_ENABLED = false
+  window.GITHUB_SYNC_ENABLED = true
+  window.GITLAB_SYNC_ENABLED = false
+  window.GITLAB_SYNC_BASE_URL = ''
+  window.VCS_SYNC_MODE = 'github'
+  window.VCS_PROVIDER_NAME = 'GitHub'
+  window.FREE_TEAM_NUM = 20
+  window.FREE_TEAM_MEMBER_NUM = 3
+  window.FREE_PUBLIC_TEAM_NUM = 10
+  
+  window.ALLOW_ANONYMOUS = true
+  window.ALLOW_ANONYMOUS_EDIT = false
+  window.PUBLIC_OVERVIEW = false
+  window.INTERNAL_PUBLIC_OVERVIEW = false
+  window.FULL_TEXT_SEARCH_ENABLE = false
+  window.ALGOLIA_SEARCH_ENABLE = true
+  window.MARKETING_EMAIL_ENABLE = true
+  
+  
+  
+  
+    window.WALLET_CONNECT_PROJECT_ID = '91d6fa182b725b5895a17a170a5878c1'
+  
+  window.API_MANAGEMENT_UI_ENABLE = true
+  window.FEEDBACK_UI_ENABLE = true
+  window.PUBLISH_ENABLE = true
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  window.TRASH_NOTE_DELETE_AFTER_FREE = 3
+  window.TRASH_NOTE_DELETE_AFTER_PAID = 30
+
+  
+
+  
+    window.IS_OWNER_UPGRADED = false
+  
+
+  
+    window.IMGUR_FALLBACK_CDN = 'https://imgur-backup.hackmd.io'
+  
+
+  
+    window.CLOUD_META_UI = true
+  
+  
+    window.CLOUD_META_API = true
+  
+  
+    window.CLOUD_META_MIGRATION = false
+  
+  
+    window.YAML_METADATA_ENABLED = false
+  
+
+  
+    window.NOTE_CAPACITY_LIMIT = 50
+  
+
+  
+    window.DOCUMENT_MAX_LENGTH = 100000
+  
+
+  
+    window.SOCIAL_NETWORK_FEATURES_ENABLED = true
+  
+
+  
+    window.PUBLISHMENT_MODERATION_ENABLED = false
+  
+
+  
+    window.REALTIME_CLIENT_WITH_CREDENTIALS = false
+  
+</script>
+
+
+        
+         <link href="https://assets.hackmd.io/build/font-vendor.85aea95458609ff85035.css" rel="stylesheet"><link href="https://assets.hackmd.io/build/common-vendor.8badda337754ab1de336.css" rel="stylesheet"><link href="https://assets.hackmd.io/build/slide-vendor.4f9ce891d775b406c282.css" rel="stylesheet"><link href="https://assets.hackmd.io/build/slide.a7a92db877e2174e7ccb.css" rel="stylesheet">
+
+        <!-- style-loader will insert style before this div in development -->
+        <!-- This prevents overwriting reveal.js theme css -->
+        <meta id="style-tag-insertion">
+
+        <!-- For reveal.js theme -->
+        
+        <link rel="stylesheet" href="https://assets.hackmd.io/build/reveal.js/dist/theme/defaultTheme.css" id="theme">
+        
+
+        <!-- For overwrite reveal.js -->
+        <link rel="stylesheet" href="https://hackmd.io/build/slide.css">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+<![endif]-->
+
+    </head>
+    <body>
+        <div class="container" data-hard-breaks="true">
+            <div class="reveal">
+                <div class="slides" style="display: none;"># Introduction to Hydra
+
+---
+
+# Code of conduct 
+
+We are operating under the Carpentries [Code of Conduct](https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html). 
+
+If you feel that someone has violated this Code of Conduct, please email `si-hpc@si.edu`.
+
+---
+
+# Introductions 
+
+---
+
+# Intended outcomes 
+
+After attending this workshop, we hope users come away with these skills:
+
+* How to successfully log in
+* How to submit a job
+* What to do if something doesn&#39;t work
+* How to work responsibly on a shared computing resource
+
+---
+
+### People
+
+* Mike Trizna (OCIO), Alex White (OCIO), Vanessa González (NMNH), Matt Kweskin (NMNH), Kenneth Macdonald (NMNH), Carlos Arias (STRI) provide support for non-CfA users.
+
+* DJ Ding (OCIO) is the full-time Hydra system administrator.
+ 
+* Sylvain Korzennik (SAO) is the HPC Analyst and provides support for CfA users (and is responsible for the cluster configuration).
+ 
+---
+
+### Getting help 
+
+* The [Wiki](https://confluence.si.edu/display/HPC/High+Performance+Computing) contains detailed documentation
+* Email `si-hpc-admin@si.edu` for system-level issues
+* For non-CfA users: 
+	* 	Bioinformatics Brown Bag (Thursdays, 1-1:30pm ET, on Zoom)
+	* Email `si-hpc@si.edu` (monitored by Matt, Vanessa, Alex, Tripp, Mike, Carlos) 
+* CfA users:
+	* email [Sylvain](mailto:hpc@cfa.harvard.edu) or sign up for his [office hours](https://lweb.cfa.harvard.edu/cf/services/cluster/request-office-hours.html).
+
+
+---
+
+### Being a good Hydra citizen
+
+* We strive to provide support for users that is inclusive, welcoming, and helps you get your science done. 
+
+* We request that users be respectful when asking for help. While we attempt to answer questions rapidly, user support is no one&#39;s full-time duties.
+
+* Hydra users agree to abide by its [usage policies](https://confluence.si.edu/display/HPC/Hydra+Policies).
+
+---
+
+# Hydra (SI/HPC)
+
+![](images/hydra-overview.jpg)
+
+---
+
+### How is a cluster different than a single-user system?
+
+
+![](https://i.imgur.com/f1jtepz.png)
+
+
+
+---
+
+### How is a cluster different than a single-user system?
+
+* Hydra has 90 compute nodes with between 20 and 128 CPUs each, for a total of more than 4000 CPUs.
+
+* Compute nodes have a range of 128GB to 2TB RAM each.
+
+* Two compute nodes have 2 GPUs each.
+
+
+---
+
+
+### Important Takeaways
+
+* Users never need to connect to the Head Node.
+
+* Log in to either `hydra-login01` or `hydra-login02`.
+
+* Do not run commands that use substantial CPU on the login nodes, that&#39;s what the compute nodes are for.
+
+* &#34;*Misuse*&#34; of any resources affect the other users (shared resource).
+
+
+---
+
+### Disk Storage 
+
+* When you log in, you go to your home directory in `/home`.
+
+* `/home` is for your own installed programs and scripts, not for data storage.
+
+---
+
+### Disk Storage 
+
+* Data (large files) belong on `/pool` or `/scratch` and users should run their jobs from here.
+
+* `/pool` and `/scratch` are scrubbed - files older than 180 days are removed.
+
+* `/data` offers some unscrubbed storage for small files (final results, configuration files, etc.)
+
+* `/store` is nearline storage for larger files that are not currently be used in analyses 
+
+---
+
+### Connecting to Hydra
+
+* telework.si.edu (web terminal)
+* Mac direct connect (onsite or VPN)
+* Windows direct connect (onsite, remote desktop, VPN)
+* CfA (VPN, `login.cfa.harvard.edu`, and *trusted* computers: CF/HEA-managed desktops)
+* If you don&#39;t have an SI VPN but would like to, there is a request form in the SI [Service Portal](https://serviceportal.si.edu), search for &#34;Remote Access Request&#34;
+
+---
+
+### The job scheduler - UGE
+
+* We use UGE (Univa Grid Engine) to schedule resources on Hydra.
+
+* When you submit a job, UGE adds it to the queue and sends it to a compute
+  node with the resources you requested when they become available.
+
+---
+
+### The job scheduler - UGE
+
+* Each job is assigned a JOB ID, which you can use to check on progress and
+  look at how it used resources when it is complete.
+
+* UGE limits how many resources each user can use concurrently.
+
+---
+
+### Analysis software
+
+* System-wide software installations on Hydra are packaged in the form of *modules*: `module avail`
+
+* Users may setup other programs for use in their directories. E.g. via conda or compiling software.
+
+---
+
+### Submitting jobs
+
+* The most common way to run analysis on Hydra is by submitting a job file using the command `qsub`
+
+* We will show you how to build a job file in just a bit
+
+* Users can also start an interactive session using `qrsh`
+
+---
+
+### Queues
+
+Hydra has different queues to accommodate different resource requests:
+* High CPU queues: `sThC.q`, `mThC.q`, `lThC.q`, `uThC.q`
+* High Memory queues: `sThM.q`, `mThM.q`, `lThM.q`, `uThM.q`
+
+There are other more specialized queues, check the wiki for more information.
+
+---
+
+### Parallelization
+
+* Depending on the software, you may be able to run a job in **parallel**, which can speed up your analysis.
+* Some software uses **threaded** parallelization, where the job is divided across CPUs on a single compute node
+* Some software can be compiled to use **MPI** parallelization, where the job is divided across multiple compute nodes
+
+---
+
+### Parallelization
+
+Look at software documentation to check which kind of parallelization, if any, your software uses and at the [Wiki](https://confluence.si.edu/display/HPC/High+Performance+Computing) for how to request the needed resources. 
+
+---
+
+### Parallelization hints
+
+* Some (bioinformatics) software will grab all the CPUs on a compute node unless you tell it otherwise (*not appropriate on a shared machine*).
+
+---
+
+### Parallelization hints
+
+* Best practice is to use `$NSLOTS` in place of a number of threads in your command. We will demo this in a bit.
+
+---
+
+### Warnings
+
+* Users that are:
+    * Running a job that is inefficient (using &lt;30% of the requested CPU resources), or
+    * Running a high-memory job that is using much less than the requested amount of RAM,
+
+will receive an automated warning email. 
+
+*We request that you monitor these jobs closely and contact us if you receive repeated warnings*
+
+---
+
+### Warnings
+
+* When the cluster usage is high, some inefficient jobs will get killed (*fair use* policy).
+
+* Important to receive and read these automatic emails from Hydra (see usage
+  policy).
+
+---
+
+# Let&#39;s Connect
+
+---
+</div>
+            </div>
+
+            <div id="meta" style="display: none;">{&#34;title&#34;:&#34;Introduction to Hydra&#34;,&#34;description&#34;:&#34;We are operating under the Carpentries Code of Conduct.&#34;}</div>
+
+            
+        </div>
+
+        
+         <script src="https://assets.hackmd.io/build/font-vendor.20350cc4e37635143259.js" defer="defer"></script><script src="https://assets.hackmd.io/build/common-vendor.f59a8489b8ce2d49b975.js" defer="defer"></script><script src="https://assets.hackmd.io/build/slide-vendor.860ac3abbcf53e23341c.js" defer="defer"></script><script src="https://assets.hackmd.io/build/slide-common.fb0162a2ceea4f101052.js" defer="defer"></script><script src="https://assets.hackmd.io/build/slide.d657e23b36c638a337b0.js" defer="defer"></script>
+    </body>
+</html>
+
+

@@ -27,7 +27,7 @@ After attending this workshop, we hope users come away with these skills:
 
 ### People
 
-* Mike Trizna (OCIO Data Science Lab), Alex White (OCIO Data Science Lab), Vanessa González (NMNH ADCS Office), Matt Kweskin (NMNH L.A.B.), Kenneth (Tripp) Macdonald (NMNH L.A.B.), Carlos Arias (STRI) provide support for non-CfA users.
+* Mike Trizna (OCIO), Alex White (OCIO), Vanessa González (NMNH), Matt Kweskin (NMNH), Kenneth Macdonald (NMNH), Carlos Arias (STRI) provide support for non-CfA users.
 
 * DJ Ding (OCIO) is the full-time Hydra system administrator.
  
