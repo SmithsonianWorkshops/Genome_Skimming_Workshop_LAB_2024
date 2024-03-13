@@ -1,6 +1,6 @@
 # Hydra: How to login
 
-This document is an intoruction to logging into Hydra using various methods.
+This document is an introduction to logging into Hydra using various methods.
 
 ## Logging In
 
@@ -19,7 +19,7 @@ Your Hydra password is independent of your Smithsonian network password.
 
 ### telework.si.edu
 
-The [telework.si.edu](https://telework.si.edu) system allows any user with a Smithsonian user account to remotely connect to Hydra.  It's available from inside the Smithsonian network as well as remotely. There is a web-based terminal program to access Hydra.
+The [telework.si.edu](https://telework.si.edu) system allows any user with a Smithsonian user account to remotely connect to Hydra. It's available from inside the Smithsonian network as well as remotely. There is a web-based terminal program to access Hydra.
 
 After logging in, expand the "IT Tools" section and choose "Hydra".
 
@@ -35,12 +35,12 @@ At the `login:` prompt, enter your Hydra username and at the `password:` prompt,
 
 When possible, a direct ssh connection from your workstation to Hydra is preferred to using the web-based Telework interface. You'll need to be using a computer located on the Smithsonian network or a remote computer with a VPN connection.
 
-* SI users seeking to request a VPN can do so with [this form](https://smithsonianprod.servicenowservices.com/si/?id=sc_cat_item&sys_id=cd8bcf38dbaec810faac7c031f961992).
+* SI users seeking to request a VPN can do so with [The Remote Access Request form](https://smithsonianprod.servicenowservices.com/si/?id=sc_cat_item&sys_id=cd8bcf38dbaec810faac7c031f961992).
 * CfA users should consult with their HPC support staff on how to establish this connection.
 
 #### `ssh` for Windows
 
-For Windows users, we recommend using the ssh client that is built in to the Command prompt of recent Windows versions. (The free program, [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), is an alternative option).
+For Windows users, we recommend using the ssh client that is built in to the Command prompt of recent Windows versions or The free program, [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
 
 Open the command prompt from the Start menu (type "command" or "cmd" in the search bar).
 

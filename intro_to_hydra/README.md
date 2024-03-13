@@ -5,7 +5,7 @@ This portion of the workshop will have two components:
 1. An introduction to using the Unix command line.
 1. An introduction to using the Smithsonian's Hydra computing cluster.
 
-If you already have command line expierence, the Unix intro is options. Similarly, if you already have Hydra experience, that is optional.
+If you already have command line expierence, the Unix intro is optional. Similarly, if you already have Hydra experience, that is optional.
 
 ## Intro to the Unix command line
 
@@ -24,4 +24,4 @@ The first portion of this section will we be covering how to login to Hydra. If 
 1. We'll be operating under the [Carpentries Code of Conduct](https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html)
 1. *(participants from the morning can skip)* Logging into Hydra [hydra_login.md](hydra_login.md)
 1. Presentation slides
-1. Hands on use of Hydra
+1. Hands on use of Hydra: [hydra_job.md](hydra_job.md)
