@@ -222,5 +222,3 @@ will receive an automated warning email.
 ---
 
 # Let's Connect
-
----
