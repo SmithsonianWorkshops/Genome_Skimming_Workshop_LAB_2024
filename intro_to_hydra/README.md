@@ -22,6 +22,6 @@ Note: The Carpentries has several command line lessons. The one we're using is f
 The first portion of this section will we be covering how to login to Hydra. If you attended the Intro the Unix command line, there will be an extended break so you don't need to go over this material again, unless you want the review.
 
 1. We'll be operating under the [Carpentries Code of Conduct](https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html)
-1. *(participants from the morning can skip)* Logging into Hydra [hydra_login.md](hydra_login.md)
 1. Presentation slides
-1. Hands on use of Hydra: [hydra_job.md](hydra_job.md)
+1. Logging into Hydra [hydra_login.md](hydra_login.md)
+1. Hands-on use of Hydra: [hydra_job.md](hydra_job.md)
