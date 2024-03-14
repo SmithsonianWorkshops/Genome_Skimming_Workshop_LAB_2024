@@ -216,9 +216,31 @@ The FileZilla user interface is setup that the local system (your workstation) i
 
 Drag the job file created via the qsub generator into `/scratch/genomics/{user}/hydra_workshop/`
 
-#### globus (Telework or on-site connection to Hydra)
+#### Globus (Telework or on-site connection to Hydra)
 
-TODO
+Globus is a tool/system for transferring files between networks. It offers high-reliablity and the ability to connect insitutions resources like Hydra to offsite computers.
+
+Hydra's `/scratch` storage is accesible via Globus.
+
+How to use it:
+
+1. Go to <https://globus.org> and click on the log in button in the top right<br><img src="../images/globus-login-icon.png" alt="login icon at Globus.org" width=50px>
+
+1. Use the dropdown under "Use your existing organizational login" and choose Smithsonian Institution. Doing this will give you permission to access your files on Hydra.<br><img src="../images/globus-login-org.png" alt="Globus login using organization login" width=400px>
+
+1. Login with your Smithsonian network account and password.
+
+1. Click on the "Search" by the "Collection" box<br><img src="../images/globus-hydra-sratch.png" alt="Globus: the hydra scratch collection" width=200px>
+
+1. Either use the file browser to find your files or enter the absolute path in the Path box<br><img src="../images/globus-scratch-path.png" alt="Globus: how to enter the path in the collection" width=400px>
+
+1. Downloading: *You can only download one file at a time.* Select the file and click the download button<br><img src="../images/globus-download.png" alt="Globus: image of downloading a single file from Globus" width=400px>
+
+1. Uploading: *You can upload multiple files at once.* Click the Upload button and then choose to upload one or more files or a whole directory <br><img src="../images/globus-upload.png" alt="Globus: image of uploading to Globus from the web" width=400px>
+
+You can also use Globus to upload/download directly to your computer by installing the free [Globus Connect Personal](https://www.globus.org/globus-connect-personal). With that you can download multiple files at once. We're not showing this because this type of connection doesn't work for computers connected to the SI networks. It will work if you're working remotely and want to transfer files.
+
+More documentation is on the SI Service Portal: <https://smithsonianprod.servicenowservices.com/si?id=kb_article_view&sysparm_article=KB0012367>
 
 #### Editing text files on Hydra
 

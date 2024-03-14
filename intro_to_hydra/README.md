@@ -38,6 +38,7 @@ These are the terms Matt will use to refer to these typographic marks:
 |-|dash, minus, hyphen|
 |@|at, at sign|
 |_|underscore|
+|!|exclamation mark, bang|
 |$|dollar sign|
 |=|equals, equal sign|
 |\||vertical bar, pipe|
