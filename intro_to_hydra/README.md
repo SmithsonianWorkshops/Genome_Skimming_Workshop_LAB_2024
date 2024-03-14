@@ -28,7 +28,7 @@ The first portion of this section will we be covering how to login to Hydra. If 
 
 ## Typographic marks
 
-There's are the terms Matt will use to refer to these typographic marks:
+These are the terms Matt will use to refer to these typographic marks:
 
 |**Symbol**|**Name Matt use**|
 |-----|-----|
