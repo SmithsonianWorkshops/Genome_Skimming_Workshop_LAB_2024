@@ -25,3 +25,30 @@ The first portion of this section will we be covering how to login to Hydra. If 
 1. Presentation slides
 1. Logging into Hydra [hydra_login.md](hydra_login.md)
 1. Hands-on use of Hydra: [hydra_job.md](hydra_job.md)
+
+## Typographic marks
+
+There's are the terms Matt will use to refer to these typographic marks:
+
+|**Symbol**|**Name Matt use**|
+|-----|-----|
+|/|slash, forward slash|
+|.|dot, period|
+|~|tilde|
+|-|dash, minus, hyphen|
+|@|at, at sign|
+|_|underscore|
+|$|dollar sign|
+|=|equals, equal sign|
+|\||vertical bar, pipe|
+|<|less than sign|
+|>|greater than sign|
+|&#92;|back slash|
+|"|quote, double quote|
+|'|single quote|
+|(|parentheses, left parentheses|
+|)|parentheses, right parentheses|
+|[|square bracket, left square bracket|
+|]|square bracket, right square bracket|
+|#|number sign, hash|
+|`|back tick|
