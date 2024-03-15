@@ -27,7 +27,7 @@ After attending this workshop, we hope users come away with these skills:
 
 ### People
 
-* Mike Trizna (OCIO Data Science Lab), Alex White (OCIO Data Science Lab), Vanessa González (NMNH ADCS Office), Matt Kweskin (NMNH L.A.B.), Kenneth (Tripp) Macdonald (NMNH L.A.B.), Carlos Arias (STRI) provide support for non-CfA users.
+* Mike Trizna (OCIO), Alex White (OCIO), Vanessa González (NMNH), Matt Kweskin (NMNH), Kenneth Macdonald (NMNH), Carlos Arias (STRI) provide support for non-CfA users.
 
 * DJ Ding (OCIO) is the full-time Hydra system administrator.
  
@@ -40,8 +40,8 @@ After attending this workshop, we hope users come away with these skills:
 * The [Wiki](https://confluence.si.edu/display/HPC/High+Performance+Computing) contains detailed documentation
 * Email `si-hpc-admin@si.edu` for system-level issues
 * For non-CfA users: 
-	* 	Bioinformatics Brown Bag (Thursdays, 1-1:30pm ET, on Zoom) 
-	* Email `si-hpc@si.edu` (monitored by Matt, Vanessa, Alex, Tripp, Mike) 
+	* 	Bioinformatics Brown Bag (Thursdays, 1-1:30pm ET, on Zoom)
+	* Email `si-hpc@si.edu` (monitored by Matt, Vanessa, Alex, Tripp, Mike, Carlos) 
 * CfA users:
 	* email [Sylvain](mailto:hpc@cfa.harvard.edu) or sign up for his [office hours](https://lweb.cfa.harvard.edu/cf/services/cluster/request-office-hours.html).
 
@@ -75,7 +75,7 @@ After attending this workshop, we hope users come away with these skills:
 
 ### How is a cluster different than a single-user system?
 
-* Hydra has 90 compute nodes with between 20 and 128 CPUs each, for a total of 4,896 CPUs.
+* Hydra has 90 compute nodes with between 20 and 128 CPUs each, for a total of more than 4000 CPUs.
 
 * Compute nodes have a range of 128GB to 2TB RAM each.
 
@@ -100,7 +100,7 @@ After attending this workshop, we hope users come away with these skills:
 
 ### Disk Storage 
 
-* When you log in, you go to your `/home` directory.
+* When you log in, you go to your home directory in `/home`.
 
 * `/home` is for your own installed programs and scripts, not for data storage.
 
@@ -114,6 +114,8 @@ After attending this workshop, we hope users come away with these skills:
 
 * `/data` offers some unscrubbed storage for small files (final results, configuration files, etc.)
 
+* `/store` is nearline storage for larger files that are not currently be used in analyses 
+
 ---
 
 ### Connecting to Hydra
@@ -122,7 +124,7 @@ After attending this workshop, we hope users come away with these skills:
 * Mac direct connect (onsite or VPN)
 * Windows direct connect (onsite, remote desktop, VPN)
 * CfA (VPN, `login.cfa.harvard.edu`, and *trusted* computers: CF/HEA-managed desktops)
-* If you don't have an SI VPN but would like to, there is a request form in the SI [ServiceDesk](https://servicedesk.si.edu)
+* If you don't have an SI VPN but would like to, there is a request form in the SI [Service Portal](https://serviceportal.si.edu), search for "Remote Access Request"
 
 ---
 
@@ -141,6 +143,14 @@ After attending this workshop, we hope users come away with these skills:
   look at how it used resources when it is complete.
 
 * UGE limits how many resources each user can use concurrently.
+
+---
+
+### Analysis software
+
+* System-wide software installations on Hydra are packaged in the form of *modules*: `module avail`
+
+* Users may setup other programs for use in their directories. E.g. via conda or compiling software.
 
 ---
 
@@ -212,5 +222,3 @@ will receive an automated warning email.
 ---
 
 # Let's Connect
-
----

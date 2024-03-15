@@ -12,16 +12,13 @@ You will also see a prompt that looks something like this:
 
 Your `/home` directory has a relatively small size limit, so you don't store data here. There are several disks to run analyses from, we'll be using `/scratch`.
 
-There are subdirectories for different groups. Biologists use `/share/genomics`
+There are subdirectories for different groups. Biologists use `/scratch/genomics`
 
 See <https://confluence.si.edu/display/HPC/Disk+Space+and+Disk+Usage> for more information about the storage configuration.
 
 ```bash
 cd /scratch/genomics/{user}
 ```
-
-| Let us know if you get an error and we'll help you find or create your `/scratch` directory |
-|---|
 
 Now that we're in the correct location, it is best practice to create a separate directory for each "project" you are working on. You can make a new directory with the `mkdir` command.
 
@@ -98,7 +95,7 @@ Loading bio/iqtree/2.1.3
   Loading requirement: gcc/7.3.0
 ```
 
-You should get a notification that the module was loaded along with another required module, but nothing else has changed.
+You should get a notification that the module was loaded along with another required module.
 
 We'll run a quick command to show that we have IQ-TREE loaded properly.
 
@@ -133,10 +130,6 @@ wget https://prod-dcd-datasets-cache-zipfiles.s3.eu-west-1.amazonaws.com/ty5h3y9
 unzip ty5h3y9rwx-1.zip
 ```
 
-```bash
-```
-
-
 ### Creation of job submission file
 
 Now that the input file is in place, we'll need to generate a job submission file.
@@ -147,6 +140,13 @@ There is a link to this page on the page that lists Hydra's web-based tools.
 
 * Telework: open the Hydra option in "IT Tools" on the Telework site
 * On-site/VPN: go to <https://galaxy.si.edu/>
+
+Choose the "Hydra tools" option 
+<img src="../images/hydra_tools.png" width=100px alt="Screenshot of an option for hydra tools">
+
+Click on "qsub generator" link
+<img src="../images/qsub_gen.png" width=100px alt="Screenshot of link to qsub generator">
+
 
 * *CPU time*: short
 * *Memory*: 4 GB
@@ -167,41 +167,22 @@ iqtree2 -s Exon_50per_taxa.phylip.txt \
 * *Err File Name*: [blank]
 * *Change to CWD*: Y
 * *Join output & error files*: Y
-* *Send email notifications*: Y
-* *Email*: [your email]
+* *Send email notifications*: [Optional]
+* *Email*: [Your email if you checked the send email option]
 
 This will generate the contents of your "job file" at the bottom. Click on the "Check if OK" button for any errors and then "Save it" to save to your computer.
 
 By default, the QSub Generator site will export this job file with a filename of "qsub.job", but it can be easy to lose track of several different versions of the same name ("Did I set up that analysis in qsub.job(54) or qsub.job(27)?"). Let's use the same job name from our job script, and rename the file to "iqtree.job".
 
-Now we need to transfer this job file to on Hydra using FileZilla or [globus.org](https://app.globus.org/).
-
-The file should go in to your `/scratch/genomics/{user}/hydra_workshop/` directory.
-
-Confirm the file looks ok by using `cat`
-
-```bash
-cat iqtree.job
-```
+Now we need to transfer this job file in to your `/scratch/genomics/{user}/hydra_workshop/` directory.
 
 ### Transferring files
 
 Critical to using Hydra is being able to transfer files to and from the system. You'll typically need to transfer to Hydra your input files and then copy back output for backing up and reporting.
 
-
-
-In this workshop we'll be running IQ-TREE on this [sequence alignment](https://doi.org/10.17632/ty5h3y9rwx.1) from [Wood et al.’s 2018 spider UCE paper](https://doi.org/10.1016/j.ympev.2018.06.038) generated at NMNH.
-
-For transferring files TO Hydra from a website, the best way to do this is to download directly to Hydra. We can use the URL for the data file and the command line program `wget` to get the file.
-
-```bash
-wget https://prod-dcd-datasets-cache-zipfiles.s3.eu-west-1.amazonaws.com/ty5h3y9rwx-1.zip
-unzip ty5h3y9rwx-1.zip
-```
-
 The best way to transfer files depends on your connection to Hydra. A description of file transfer options is available here: <https://confluence.si.edu/display/HPC/Disk+Space+and+Disk+Usage#DiskSpaceandDiskUsage-HowToCopy>
 
-* Telework: Globus... TODO
+* Telework: Globus or ffsend
 * Windows or Mac directly connected to the Smithsonian network
   * The `scp` command is a great utility for transferring files to and from Hydra.
   * For a GUI program we recommend FileZilla, which you can download from [https://filezilla-project.org/download.php?show_all=1](https://filezilla-project.org/download.php?show_all=1)
@@ -233,19 +214,33 @@ The FileZilla user interface is setup that the local system (your workstation) i
 
 <img src="../images/filezilla-ui.png" alt="FileZilla- user interface for file transfers overview" width=400px>
 
-Use this method to transfer `Exon_50per_taxa.phylip.txt` to your /scratch/genomics/{user}/hydra_workshop directory
+Drag the job file created via the qsub generator into `/scratch/genomics/{user}/hydra_workshop/`
 
-#### globus (Telework connection to Hydra)
+#### Globus (Telework or on-site connection to Hydra)
 
-TODO
+Globus is a tool/system for transferring files between networks. It offers high-reliablity and the ability to connect insitutions resources like Hydra to offsite computers.
 
-Confirm the file has transferred by using the `less` command
+Hydra's `/scratch` storage is accesible via Globus.
 
-```bash
-less Exon_50per_taxa.phylip.txt
-```
+How to use it:
 
+1. Go to <https://globus.org> and click on the log in button in the top right<br><img src="../images/globus-login-icon.png" alt="login icon at Globus.org" width=50px>
 
+1. Use the dropdown under "Use your existing organizational login" and choose Smithsonian Institution. Doing this will give you permission to access your files on Hydra.<br><img src="../images/globus-login-org.png" alt="Globus login using organization login" width=400px>
+
+1. Login with your Smithsonian network account and password.
+
+1. Click on the "Search" by the "Collection" box<br><img src="../images/globus-hydra-sratch.png" alt="Globus: the hydra scratch collection" width=200px>
+
+1. Either use the file browser to find your files or enter the absolute path in the Path box<br><img src="../images/globus-scratch-path.png" alt="Globus: how to enter the path in the collection" width=400px>
+
+1. Downloading: *You can only download one file at a time.* Select the file and click the download button<br><img src="../images/globus-download.png" alt="Globus: image of downloading a single file from Globus" width=400px>
+
+1. Uploading: *You can upload multiple files at once.* Click the Upload button and then choose to upload one or more files or a whole directory <br><img src="../images/globus-upload.png" alt="Globus: image of uploading to Globus from the web" width=400px>
+
+You can also use Globus to upload/download directly to your computer by installing the free [Globus Connect Personal](https://www.globus.org/globus-connect-personal). With that you can download multiple files at once. We're not showing this because this type of connection doesn't work for computers connected to the SI networks. It will work if you're working remotely and want to transfer files.
+
+More documentation is on the SI Service Portal: <https://smithsonianprod.servicenowservices.com/si?id=kb_article_view&sysparm_article=KB0012367>
 
 #### Editing text files on Hydra
 
@@ -331,9 +326,7 @@ qacct+ -j 21884560
 
 *Pay specific attention to the maxvmem line of the output. This shows the maximum amount of virtual memory that your job used. If this is significantly less than the amount you requested, make sure to adjust in future jobs.*
 
-To transfer the resulting treefile to your personal computer...
-
-TODO
+You can then transfer the output files to your computer.
 
 ## Interactive queue
 
