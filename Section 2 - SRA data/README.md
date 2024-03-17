@@ -16,12 +16,15 @@ Load the SRA toolkit module.
 ```
 module load bioinformatics/sratoolkit
 ```
+
 To download SRAs, you can either submit a separate prefetch command for each of your files, or you can create a text files containing a list of SRA accession numbers and download them all using a single prefetch command. Run prefetch from `data/sra/`. Everything else will be run from `jobs/`.
 
 Download your SRA files.
+
 ```
 prefetch SRRxxxx
 ```
+
 or
 
 ```
@@ -52,6 +55,7 @@ You can also check the integrity of the requested SRA data using vdb-validate
 ```
 vdb-validate SRRxxxx
 ```
+
 **I would recommend having this SRA accession number handy on your laptop, because you will be using it a lot, so having the ability to quickly copy it anytime is very useful.**
 
 Prefetch downloads files in SRA format (ending in .sra). These need to be converted to fastq files. For this, we use another program from sratoolkit called fasterq-dump. We run this in a job, which can be found here:
