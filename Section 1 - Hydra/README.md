@@ -1,5 +1,7 @@
 ## Hydra Configuration and Data Transfer
 
+[Hydra cheat sheet](https://github.com/SmithsonianWorkshops/HydraResources/blob/master/Hydra%20Cheat%20Sheet.md)
+
 ### Log into Hydra
 Open the terminal app and log onto Hydra. You will need your hydra account password.
 
