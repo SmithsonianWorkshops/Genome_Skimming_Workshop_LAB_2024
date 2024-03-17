@@ -38,3 +38,5 @@ Links to application-specific .job files will be in each respective section. To 
 ### FileZilla
  We will be using the FileZilla to transfer data from hydra to our local computer. We will go over the FileZilla settings when we need to transfer our first files. You can also choose to use scp to transfer, if you prefer.
 
+Here are the settings to use to connect to Hydra with FileZilla:
+<img src="../images/filezilla-login.png" alt="FileZilla settings for Hydra" width=500px>
