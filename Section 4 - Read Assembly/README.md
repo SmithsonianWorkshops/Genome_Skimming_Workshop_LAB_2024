@@ -14,7 +14,7 @@ A generic SPAdes job can be found here: [SPAdes.job](https://raw.githubuserconte
 ### GetOrganelle
 We are also going to run GetOrganelle on all our trimmed paired and unpaired reads.
 
-We need a results folder for GetOrganelle: `data/results/getorganelle/SRRxxxx`. The GetOrganelle results for each paired set of reads (each hydra job) will be saved in a sample-specific directory. Unlike SPAdes, GetOrganelle creates that directory, so you don't need to create that (and GetOrganelle will stop and give you and error if you do create it). The contig file(s) that will be used in the next annotation step are named similar to either animal_mt.Kxxx.complete.graph1.x.path_sequence.fasta if GetOrgenelle found a complete mitogenome, or animal_mt.Kxxx.scaffolds.graph1.x.path_sequence.fasta if it found contigs that could not be circularized. 
+We need a results folder for GetOrganelle: `data/results/getorganelle`. The GetOrganelle results for each paired set of reads (each hydra job) will be saved in a sample-specific directory. Unlike SPAdes, GetOrganelle creates that directory, so you don't need to create that (and GetOrganelle will stop and give you and error if you do create it). The contig file(s) that will be used in the next annotation step are named similar to either animal_mt.Kxxx.complete.graph1.x.path_sequence.fasta if GetOrgenelle found a complete mitogenome, or animal_mt.Kxxx.scaffolds.graph1.x.path_sequence.fasta if it found contigs that could not be circularized. 
 
 Create and submit a GetOrganelle job for each set of trimmed fastq or fastq.gz read files.
 A generic GetOrganelle job can be found here: [GetOrganelle.job](https://raw.githubusercontent.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/main/job_files/getorganelle.job).
