@@ -7,7 +7,7 @@ We are following the Carpentries organization’s [Code of Conduct](https://docs
 
 We will be using Teams for in-session chatting. You are all members of the "Genome Skimming 2024" channel of our "NMNH-LAB Workshops" team, and we will use that for questions, sharing information and documents, etc.
 
-We will be dividing up the analyses this week into sections based on methodology and the programs we will be using. A schedule for the week can be found here XXXXXXXX. We will attempt to keep to this schedule, but we also intend to be flexible. The directions for each section can be found in the README.md for that section, see the links below.
+We will be dividing up the analyses this week into sections based on methodology and the programs we will be using. A schedule for the week can be found here: [Genome Skimming Workshop 2024 Schedule](https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/blob/main/images/Genome%20Skimming%20Workshop%202024%20Schedule.pdf). We will attempt to keep to this schedule, but we also intend to be flexible. The directions for each section can be found in the README.md for that section, see the links below.
 
 
 [Section 1 - Hydra](https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/tree/main/Section%201%20-%20Hydra)  
