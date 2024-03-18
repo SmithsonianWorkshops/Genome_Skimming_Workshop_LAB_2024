@@ -22,6 +22,6 @@ fasterq-dump /scratch/genomics/USER/PROJECT/data/sra/SRRxxxx \
 --threads $NSLOTS
 
 
-# --outdir is the target directory for your converted read files. --threads is
-# number of threads fasterq-dump will use. $NSLOTS tells the program to use the
-# number of threads assigned in the Parameters section
+# --outdir is the target directory for your converted read files. 
+# --threads is number of threads fasterq-dump will use. $NSLOTS tells the
+# program to use the number of threads assigned in the Parameters section.
