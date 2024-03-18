@@ -17,4 +17,4 @@ We will be dividing up the analyses this week into sections based on methodology
 [Section 5 - Annotation](https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/tree/main/Section%205%20-%20Annotation)  
 [Section 6 - Assembly QC and Download Data](https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/tree/main/Section%206%20-%20Assembly%20QC%20and%20Download%20Data)  
 [Section 7 - Geneious](https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/tree/main/Section%207%20-%20Geneious)  
-[Section 8 - Submission]  
+[Section 8 - Submission](https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/tree/main/Section%208%20-%20NCBI)  
