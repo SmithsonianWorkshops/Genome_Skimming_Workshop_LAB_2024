@@ -30,16 +30,15 @@ get_organelle_from_reads.py \
 echo = `date` job $JOB_NAME done
 
 
-# -1 is the path to the R1 PE trimmed file, -2 is the path to the R2 PE trimmed
-#  file. PE files come in pairs, both the R1 and R2 are present. -u is the path
-#  to the unpaired files. If you use fastp to trim reads, both R1 and R2 
-# unpaired reads are saved into the same file.
-# -o is where the output folder will be saved.
-# -F is the type of organelle you are asking the program to find.
+# -1 is the path to the R1 PE trimmed file
+# -2 is the path to the R2 PE trimmed file. PE files come in pairs, both the R1 
+# and R2 are present.
+# -u is the path to the unpaired files. If you use fastp to trim reads, both R1 
+# and R2 unpaired reads are saved into the same file.
+# -o is the output directory where the results are saved.
+# -F is the type of organelle and taxanomic group of the input reads
 # -t is the number of threads requested
-# Don't forget to replace USERNAME with your username, and PROJECT with your
-# project name.
-# --reduce-reads-for-coverage inf
+
 # Taxa list to use for the 2nd element passed in calling the shell script
 # embplant_pt
 # other_pt
