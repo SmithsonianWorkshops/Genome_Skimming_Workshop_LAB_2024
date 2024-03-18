@@ -1,14 +1,3 @@
-## Assembly QC and Downloading Data
-
-### Assembly QC
-We are going to use [QUAST](https://github.com/ablab/quast) (QUality ASsessment Tool) to evaluate the quality of our assemblies. We are going to run QUAST on our SPAdes contigs and our GetOrganelle assembly.
-
-The QUAST results for each paired set of reads (each hydra job) will be saved in a sample-specific directory that you create `data/results/quast/SRRxxxx`. 
-Create and submit a QUAST job for your SPAdes contigs.fasta files, and for your "complete" mitogenome assembly from GetOrganelle. A generic QUAST job can be found here: [QUAST.job](https://raw.githubusercontent.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/main/job_files/quast.job).
-
-**Don't forget that you will need to create `data/results/quast/SRRxxxx` first.**
-
-
 ### Map Reads to Reference
 We are also going to map our trimmed reads to our GetOrganelle mitochondrial contigs using the program [Bowtie2](https://github.com/BenLangmead/bowtie2). 
 
