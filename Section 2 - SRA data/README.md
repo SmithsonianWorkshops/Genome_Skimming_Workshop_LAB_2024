@@ -5,7 +5,7 @@ Before we start genome skimming, we need read data to analyze. We have chosen so
 
 https://www.ncbi.nlm.nih.gov/sra
 
-We have assigned SRAs for you to analyze. Lets learn a little more about the sample. Go the the NCBI SRA website above and search for your SRAs. Make sure to note the phylum of your reads, you will need this later.
+We have assigned SRAs for you to analyze. Lets learn a little more about your samples. Go the the NCBI SRA website above and search for your SRAs. Make sure to note the phylum of your sample, you will need this information later.
 
 We download SRA data from the NCBI website using the prefetch program in SRA toolkit, which is already installed as a module in `bioinformatics/` on hydra. 
 
@@ -17,9 +17,9 @@ Load the SRA toolkit module.
 module load bioinformatics/sratoolkit
 ```
 
-To download SRAs, you can either submit a separate prefetch command for each of your files, or you can create a text files containing a list of SRA accession numbers and download them all using a single prefetch command. Run prefetch from `data/sra/`. Everything else will be run from `jobs/`.
+To download SRAs, you can either submit a separate prefetch command for each of your files, or you can create a text files containing a list of SRA accession numbers and download them all using a single prefetch command. [Here's an example](https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/blob/main/images/SraAccList.csv). We will run prefetch from `data/sra/`. Everything else will be run from `jobs/`.
 
-Download your SRA files.
+Go to `data/sra/` and download your SRA files.
 
 ```
 prefetch SRRxxxx
@@ -31,7 +31,7 @@ or
 prefetch --option-file SraAccList.csv
 ```
 
-Whoops, this most likely didn't work for you if you havenpt used SRA toolkit before, giving an error something like:
+Whoops, this most likely didn't work for you if you haven't used SRA toolkit before, giving an error something like:
 
 "This sra toolkit installation has not been configured.  
 Before continuing, please run: vdb-config --interactive"
@@ -61,7 +61,8 @@ vdb-validate SRRxxxx
 Prefetch downloads files in SRA format (ending in .sra). These need to be converted to fastq files. For this, we use another program from sratoolkit called fasterq-dump. We run this in a job, which can be found here:
 [fasterq-dump.job](https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/raw/main/job_files/fasterq_dump.job)
 
-Fasterq-dump converts SRA data to fastq data, which can often be very large. Typically, we would subsequently compress fastq files to fastq.gz files, using gzip. However, this can take a long time, over an hour for some of the files here. Luckily, we do not need fastq.gz read files, our programs can analyze fastq data. 
+Fasterq-dump converts SRA data to fastq data, and will save it in the directory `/data/raw/`, which you will have to create. fastq data can often be very large, and typically we would subsequently compress fastq files to fastq.gz files using gzip. However, this can take a long time, so we will not do this for these analyses. Luckily, we do not need fastq.gz read files, our programs can analyze fastq data. 
 
-Submit fasterq-dump job files for each of your SRAs in `data/sra/`, using `data/raw` as your output directory.  
-**Don't forget that you will need to create `data/raw` first.**
+Submit fasterq-dump job files for each of your SRAs in `data/sra/`, using `data/raw/` as your output directory.  
+
+**Don't forget that you will need to create `data/raw/` first.**
