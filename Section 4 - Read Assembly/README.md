@@ -16,6 +16,17 @@ We are also going to run GetOrganelle on all our trimmed paired and unpaired rea
 
 We need a results folder for GetOrganelle: `data/results/getorganelle`. The GetOrganelle results for each paired set of reads (each hydra job) will be saved in a sample-specific directory. Unlike SPAdes, GetOrganelle creates that directory, so you don't need to create that (and GetOrganelle will stop and give you and error if you do create it). The contig file(s) that will be used in the next annotation step are named similar to either animal_mt.Kxxx.complete.graph1.x.path_sequence.fasta if GetOrgenelle found a complete mitogenome, or animal_mt.Kxxx.scaffolds.graph1.x.path_sequence.fasta if it found contigs that could not be circularized. 
 
+Before we start GetOrganelle, we need to download the program's `animal_mt` database. This only needs to be done one time for each database available through GetOrganelle.
+
+We're going to run this step directly from the command prompt rather than submitting a job. It will take about 30 seconds to run.
+
+```bash
+module load tools/conda
+start-conda
+conda activate /scratch/nmnh_lab/envs/genome_skimming/getorganelle_ksm
+get_organelle_config.py -a animal_mt
+```
+
 Create and submit a GetOrganelle job for each set of trimmed fastq or fastq.gz read files.
 A generic GetOrganelle job can be found here: [GetOrganelle.job](https://raw.githubusercontent.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/main/job_files/getorganelle.job).
 
