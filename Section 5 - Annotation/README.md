@@ -8,11 +8,11 @@ MitoFinder requires a mitochondrial genome database in GenBank (.gb) format.  It
 
 We have multiple phyla-specific reference databases available for usage, as well as a larger Metazoan database.
 
-We need a results folder for Mitofinder: `data/results/mitofinder`. Within this directory will be a job-specific directory for each submitted job annotated. Within each of these will be a "SAMPLE_Final_Results" folder, which will contain the mitogenome annotations for that contig.
+We need a results folder for Mitofinder: `data/results/mitofinder`. Within this directory will be a job-specific directory for each submitted job annotated. Within each of these will be a "SRRxxxx_Final_Results" folder, which will contain the mitogenome annotations for that contig.
 
-We are going to annotate both the SPAdes results and the GetOrganelle results with MitoFinder.
+We are going to annotate only the GetOrganelle results with MitoFinder.
 
-Create and submit a MitoFinder job for your contig files, from both your SPAdes and GetOrganelle assemblies. A generic MitoFinder job can be found here: [MitoFinder.job](https://raw.githubusercontent.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/main/job_files/mitofinder.job). You will need to change multiple fields in your MitoFinder jobs. Not only must you change the path to the contig file, but you must also set the genetic code (`-o`) and the reference database (`-r`). See the bottom of the supplied job file for how to set these two parameters.
+Create and submit a MitoFinder job for your contig files, from your GetOrganelle assembly. A generic MitoFinder job can be found here: [MitoFinder.job](https://raw.githubusercontent.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/main/job_files/mitofinder.job). You will need to change multiple fields in your MitoFinder jobs. Not only must you change the path to the contig file, but you must also set the genetic code (`-o`) and the reference database (`-r`). See the bottom of the supplied job file for how to set these two parameters.
 
 **Don't forget that you will need to create `data/results/mitofinder` first.**
 
