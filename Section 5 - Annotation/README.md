@@ -21,7 +21,7 @@ MitoFinder does not always do a great job of annotating all the features present
 
 MITOS requires a reference database. The developers have supplied one for our usage, and while it is possible to make your own, it is not nearly as simple as it is in MitoFinder, so we will use the available one.
 
-We need a results folder for MITOS: `data/results/mitofinder`. Within this directory will be a job-specific directory for each submitted job annotated. Within each of these will be a "SAMPLE_Final_Results" folder, which will contain the mitogenome annotations for that contig.
+We need a results folder for MITOS: `data/results/mitos`. Within this directory will be a job-specific directory for each submitted job annotated. Within each of these will be a "SRRxxxx_Final_Results" folder, which will contain the mitogenome annotations for that contig.
 
 Create and submit a MITOS job for your GetOrganelle contig file. A generic MITOS job can be found here: [MITOS.job](https://raw.githubusercontent.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/main/job_files/mitos.job). In addition to your input and output paths, you will also need to change the genetic code (-c) used before submitting the job.  
 **Don't forget that you will need to create `data/results/mitos` first.**
