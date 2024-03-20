@@ -6,8 +6,8 @@
 #$ -l mres=24G,h_data=4G,h_vmem=4G
 #$ -cwd
 #$ -j y
-#$ -N SRRxxxx_bowtie2_ASSEMBLY
-#$ -o logs/SRRxxxx_bowtie2_ASSEMBLY.log
+#$ -N SRRxxxx_bowtie2_ASSEMBLER
+#$ -o logs/SRRxxxx_bowtie2_ASSEMBLER.log
 
 # ----------------Modules------------------------- #
 module load tools/conda
@@ -28,7 +28,7 @@ bowtie2 \
 -1 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R1_PE_trimmed.fastq \
 -2 /scratch/genomics/USER/PROJECT/data/trimmed_sequences/SRRxxxx_R2_PE_trimmed.fastq \
 | samtools view -F 4 -b > \
-/scratch/genomics/USER/PROJECT/data/results/bowtie2/SRRxxxx/SRRxxxx_bowtie2_PROGRAM.bam
+/scratch/genomics/USER/PROJECT/data/results/bowtie2/SRRxxxx/SRRxxxx_bowtie2_ASSEMBLER.bam
 
 #
 echo = `date` job $JOB_NAME done
