@@ -8,6 +8,3 @@ Import your getorganelle contigs into their respective folders. You can do this 
 ### Mitogenome annotation
 Import your MitoFinder_getorganelle .gff file into the sample folder, either via drop-and-drag or through the dropdown menus. Highlight the just-imported file. Through the dropdown menu (File>Import>Files), import the Mitos_getorganelle .gff file. It will ask you if you want to attach this file to the current file. Yes, you do. You should now have a mitogenome sequence and two annotations, one from Mitofinder and one from MITOS, saved onto different tracks attached to the mitogenome. These are your annotated mitogenomes. We will examine the annotations further in Geneious.
 
-
-
-<img src="https://github.com/SmithsonianWorkshops/Genome_Skimming_Workshop_LAB_2024/blob/main/images/vdb-config.png" alt="vdb-config" width=600px>
