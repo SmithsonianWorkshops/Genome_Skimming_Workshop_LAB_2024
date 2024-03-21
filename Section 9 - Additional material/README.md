@@ -12,8 +12,8 @@ You've seen from the work we've done this week that to run each job for each sam
 
 ### Automating job submissions
 
-* The modified job script is [fastqc_raw_LOOP.job](../jobs_files/fastqc_raw_LOOP.job)
-* Start start the job look we're going to use [submit_fastqc_raw_LOOP.sou](../jobs_files/submit_fastqc_raw_LOOP.sou)
+* The modified job script is [fastqc_raw_LOOP.job](../job_files/fastqc_raw_LOOP.job)
+* Start start the job look we're going to use [submit_fastqc_raw_LOOP.sou](../job_files/submit_fastqc_raw_LOOP.sou)
 
 #### Adding separate log files
 
