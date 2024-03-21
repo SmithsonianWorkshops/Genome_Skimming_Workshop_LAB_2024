@@ -18,12 +18,17 @@ echo + `date` job $JOB_NAME started in $QUEUE with jobID=$JOB_ID on $HOSTNAME
 echo + NSLOTS = $NSLOTS
 #
 
-# This scripts a file to be given as an input when submitted
+# This scripts expects a file to be given as an argument when submitted
 # $1 contains the first input argument
 
 if [ -z $1 ]; then
-  echo "ERROR: the input file to run fastqc on was expected. Exiting" 
+  echo "ERROR: enter the name of the fastq file as argument with qsub."
+  echo "   Example: qsub fastqc_raw_LOOP.job ../data/raw/reads_1.fastq"
+  echo "...exiting"
+  exit 1 
 fi
+
+# FASTQ is the name of the fastq file supplied as an argument
 FASTQ=$1
 
 #

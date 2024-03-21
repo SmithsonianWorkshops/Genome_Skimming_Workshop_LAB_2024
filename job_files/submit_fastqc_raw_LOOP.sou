@@ -1,0 +1,10 @@
+# Run this with: source submit_fastqc_raw_LOOP.sou
+# The "echo" in front of the qsub is for testing. It will
+# output the qsub command to the screen.
+#
+# If the output looks right, delete "echo" from the front of the
+# line and then re-run with: source submit_fastqc_raw_LOOP.sou
+
+for FILE in ../data/raw/*fastq; do
+  echo qsub fastqc_raw_LOOP.job $FILE
+done
