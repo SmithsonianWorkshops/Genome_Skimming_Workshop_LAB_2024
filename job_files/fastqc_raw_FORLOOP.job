@@ -1,0 +1,40 @@
+#!/bin/sh
+# ----------------Parameters---------------------- #
+#$ -S /bin/sh
+#$ -q sThC.q
+#$ -l mres=6G,h_data=6G,h_vmem=6G
+#$ -cwd
+#$ -j y
+#$ -N fastqc_raw_LOOP
+#$ -o logs/fastqc_raw_LOOP.log
+#
+# ----------------Modules------------------------- #
+module load tools/conda
+start-conda
+conda activate /scratch/nmnh_lab/envs/genome_skimming/fastqc_ksm
+# ----------------Your Commands------------------- #
+#
+echo + `date` job $JOB_NAME started in $QUEUE with jobID=$JOB_ID on $HOSTNAME
+echo + NSLOTS = $NSLOTS
+#
+
+# This scripts a file to be given as an input when submitted
+# $1 contains the first input argument
+
+if [ -z $1 ]; then
+  echo "ERROR: the input file to run fastqc on was expected. Exiting" 
+fi
+FASTQ=$1
+
+#
+fastqc \
+  $FASTQ \
+  -o /scratch/genomics/USER/PROJECT/data/raw
+
+#
+echo = `date` job $JOB_NAME done
+
+# This job file loads the conda module, activates the fastqc
+# environment, and runs fastqc on the named read files
+
+# -o is the path to the output directory
