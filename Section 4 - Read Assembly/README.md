@@ -1,5 +1,5 @@
 ## Read Assembly
-There are multiple programs available for assembling your reads into longer continuous sequences. Some commonly used ones are [SPAdes](https://github.com/ablab/spades), [MitoFinder](https://github.com/RemiAllio/MitoFinder), [GetOrganelle](https://github.com/RemiAllio/MitoFinder), and [MitoZ](https://github.com/linzhi2013/MitoZ). We are going to focue on two programs today: SPAdes and GetOrganelle.
+There are multiple programs available for assembling your reads into longer continuous sequences. Some commonly used ones are [SPAdes](https://github.com/ablab/spades), [MitoFinder](https://github.com/RemiAllio/MitoFinder), [GetOrganelle](https://github.com/Kinggerm/GetOrganelle), and [MitoZ](https://github.com/linzhi2013/MitoZ). We are going to focue on two programs today: SPAdes and GetOrganelle.
 
 ### SPAdes 
 We are going to run SPAdes on all our trimmed paired and unpaired reads. 
